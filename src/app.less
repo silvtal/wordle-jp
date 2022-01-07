@@ -1,2 +1,94 @@
+
+// Favicon: https://imgbin.com/png/L7gMHybj/alarm-clock-icon-png
+
+@fntBaseSize: 18px;
+@clrDarkText: #303030;
+@clrDarkGrey: #707375;
+@clrGreen: #679e72; // Hue:
+@clrRed: #c25661; // Hue: 354
+
 * { box-sizing: border-box; }
-body {  }
+head, body { height: 100%; overflow: hidden; }
+body {
+  margin: 0; display: flex; justify-content: center;
+  font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+  font-size: @fntBaseSize; color: @clrDarkText;
+}
+main {
+  position: relative; width: 100%; max-width: 500px; height: auto;
+  header { border-bottom: 1px solid @clrDarkText; height: 90px; }
+  h1, h2 { font-family: inherit; margin: 0; text-align: center; font-weight: bold; }
+  h1 { font-size: @fntBaseSize * 2; }
+  h2 { font-size: @fntBaseSize * 1.5; }
+}
+
+section {
+  width: 100%; display: flex; justify-content: center; flex-wrap: wrap;
+  flex-direction: column; justify-content: flex-start;
+}
+
+#grid {
+  position: relative; padding-top: 20px;
+  height: calc(80vh - 180px);
+  .row {
+    width: 100%; display: flex; justify-content: center;
+    height: 16.6%; max-height: @fntBaseSize * 3; padding: 4px;
+  }
+  .tile {
+    height: 100%; width: calc((80vh - 220px) / 5.5); max-width: @fntBaseSize * 3;
+    border: 1pt solid #c0c0c0; margin: 4px;
+    font-size: 1.5 * @fntBaseSize; text-transform: uppercase;
+    font-weight: bold; padding-top: 2px; text-align: center;
+    &.filled { border-color: @clrDarkGrey; }
+    &.miss { background-color: @clrDarkGrey; border-color: @clrDarkGrey; color: white; }
+    &.hit { background-color: @clrGreen; border-color: @clrGreen; color: white; }
+    &.near { background-color: @clrRed; border-color: @clrRed; color: white; }
+  }
+}
+
+@media screen and (max-height: 640px) {
+  #grid .tile { font-size: calc((100vh - 320px) / 13); }
+}
+
+
+#keyboard {
+  position: fixed; bottom: 0; left: 0;
+  font-size: @fntBaseSize;
+
+  .row {
+    width: 100%; display: flex; justify-content: center;
+  }
+  .key {
+    padding: 0.5em 0.3em; border-radius: 4px;
+    margin: 0 4px 8px 4px; min-width: 2em;
+    cursor: default; user-select: none;
+    text-align: center; font-weight: bold; text-transform: uppercase;
+    &.enter { font-size: 0.7em; padding-top: 1.1em; }
+
+    background-color: #e0e0e0;
+    &:hover { background-color: lighten(#e0e0e0, 5%); }
+    &.miss { background-color: @clrDarkGrey; color: white; }
+    &.miss:hover { background-color: lighten(@clrDarkGrey, 15%); }
+    &.hit { background-color: @clrGreen; color: white; }
+    &.hit:hover { background-color: lighten(@clrGreen, 15%) ; }
+    &.near { background-color: @clrRed; color: white; }
+    &.near:hover { background-color: lighten(@clrRed, 12%) ; }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #keyboard {
+    font-size: calc(4vw);
+    .key { margin: 1.5px; padding: 0.7em 0.5em; }
+    .key.enter { padding-top: 1.5em; }
+  }
+}
+
+aside {
+  position: absolute; top: 130px; left: 50%; margin-left: -40%; width: 80%;
+  background-color: @clrDarkText; color: white;
+  text-align: center; white-space: pre-wrap;
+  padding: 10px 10px; border-radius: 8px;
+  display: none; &.visible { display: block; }
+
+}

@@ -1,7 +1,7 @@
 const esbuild = require('esbuild');
 const livereload = require("livereload");
 const { lessLoader } = require("esbuild-plugin-less");
-const htmlPrepper = require("./build-html-prepper");
+const customTasks = require("./build-custom-tasks");
 const StaticServer = require('static-server');
 
 const args = (argList => {
@@ -47,7 +47,7 @@ esbuild.build({
   bundle: true,
   sourcemap: true,
   plugins: [
-    htmlPrepper({prod}),
+    customTasks({prod}),
     lessLoader(),
   ],
   watch: watch,
