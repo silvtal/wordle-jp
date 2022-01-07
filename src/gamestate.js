@@ -34,7 +34,8 @@ class Gamestate {
   }
 
   isSolved() {
-    let word = this.rows[this.finishedRows];
+    if (this.finishedRows == 0) return  false;
+    let word = this.rows[this.finishedRows - 1];
     return word == this.solution;
   }
 

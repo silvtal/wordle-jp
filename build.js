@@ -45,7 +45,8 @@ esbuild.build({
   entryPoints: ["src/app.js", "src/app.less"],
   outdir: "public",
   bundle: true,
-  sourcemap: true,
+  sourcemap: !args.prod,
+  minify: args.prod,
   plugins: [
     customTasks({prod}),
     lessLoader(),

@@ -1,5 +1,12 @@
 import {LetterState, Gamestate} from "./gamestate.js";
 
+
+function flashKey(elmKey) {
+  elmKey.classList.add("pressed");
+  setTimeout(() => elmKey.classList.remove("pressed"), 10);
+}
+
+
 class Keyboard {
   constructor(elm, gamestate) {
     this.elm = elm;
@@ -21,29 +28,34 @@ class Keyboard {
   }
 
   initEvents() {
-    this.elm.addEventListener("click", e => {
-      if (!e.target.classList.contains("key")) return;
-      if (e.target.classList.contains("back"))
-        this.elm.dispatchEvent(new Event("back"));
-      else if (e.target.classList.contains("enter"))
-        this.elm.dispatchEvent(new Event("enter"));
-      else {
-        this.elm.dispatchEvent(new CustomEvent("letter", {
-          detail: e.target.innerText.toLowerCase(),
-        }));
-      }
-    });
+    this.elm.addEventListener("click", e => this.onClick(e));
     document.addEventListener("keydown", e => this.onKeydown(e));
+  }
+
+  onClick(e) {
+    if (!e.target.classList.contains("key")) return;
+    if (e.target.classList.contains("back"))
+      this.elm.dispatchEvent(new Event("back"));
+    else if (e.target.classList.contains("enter"))
+      this.elm.dispatchEvent(new Event("enter"));
+    else {
+      this.elm.dispatchEvent(new CustomEvent("letter", {
+        detail: e.target.innerText.toLowerCase(),
+      }));
+    }
+    flashKey(e.target);
   }
 
   onKeydown(e) {
     if (e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.key == "Enter") {
       this.elm.dispatchEvent(new Event("enter"));
+      flashKey(this.elm.querySelector(".enter"));
       return;
     }
     if (e.key == "Backspace") {
       this.elm.dispatchEvent(new Event("back"));
+      flashKey(this.elm.querySelector(".back"));
       return;
     }
     let key = e.key.toLowerCase();
@@ -54,6 +66,7 @@ class Keyboard {
         this.elm.dispatchEvent(new CustomEvent("letter", {
           detail: letter,
         }));
+        flashKey(elmKey);
         return;
       }
     }

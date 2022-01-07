@@ -4,25 +4,32 @@
 @fntBaseSize: 18px;
 @clrDarkText: #303030;
 @clrDarkGrey: #707375;
+@clrLightGrey: #e0e0e0;
 @clrGreen: #679e72; // Hue:
 @clrRed: #c25661; // Hue: 354
 
 * { box-sizing: border-box; }
-head, body { height: 100%; overflow: hidden; }
+html, body { height: 100%; overflow: hidden; }
 body {
   margin: 0; display: flex; justify-content: center;
   font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
   font-size: @fntBaseSize; color: @clrDarkText;
 }
 main {
-  position: relative; width: 100%; max-width: 500px; height: auto;
+  position: relative; width: 100%; max-width: 500px;
   header { border-bottom: 1px solid @clrDarkText; height: 90px; }
   h1, h2 { font-family: inherit; margin: 0; text-align: center; font-weight: bold; }
   h1 { font-size: @fntBaseSize * 2; }
   h2 { font-size: @fntBaseSize * 1.5; }
+  #showInfo {
+    display: block; position: absolute; right: 15px; top: 15px; cursor: pointer;
+    width:  24px; height: 24px; border-radius: 12px; text-align: center;
+    border: 1.5px solid @clrDarkGrey; color: @clrDarkGrey;
+    font-size: 14px; font-weight: bold;
+  }
 }
 
-section {
+main>section {
   width: 100%; display: flex; justify-content: center; flex-wrap: wrap;
   flex-direction: column; justify-content: flex-start;
 }
@@ -39,7 +46,9 @@ section {
     border: 1pt solid #c0c0c0; margin: 4px;
     font-size: 1.5 * @fntBaseSize; text-transform: uppercase;
     font-weight: bold; padding-top: 2px; text-align: center;
+
     &.filled { border-color: @clrDarkGrey; }
+    &.miss, &.hit, &.near { transition: background-color 800ms ease-out; }
     &.miss { background-color: @clrDarkGrey; border-color: @clrDarkGrey; color: white; }
     &.hit { background-color: @clrGreen; border-color: @clrGreen; color: white; }
     &.near { background-color: @clrRed; border-color: @clrRed; color: white; }
@@ -52,7 +61,7 @@ section {
 
 
 #keyboard {
-  position: fixed; bottom: 0; left: 0;
+  position: absolute; bottom: 0; left: 0;
   font-size: @fntBaseSize;
 
   .row {
@@ -65,14 +74,25 @@ section {
     text-align: center; font-weight: bold; text-transform: uppercase;
     &.enter { font-size: 0.7em; padding-top: 1.1em; }
 
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; transition: background-color 300ms ease-out;
     &:hover { background-color: lighten(#e0e0e0, 5%); }
     &.miss { background-color: @clrDarkGrey; color: white; }
     &.miss:hover { background-color: lighten(@clrDarkGrey, 15%); }
     &.hit { background-color: @clrGreen; color: white; }
-    &.hit:hover { background-color: lighten(@clrGreen, 15%) ; }
+    &.hit:hover { background-color: lighten(@clrGreen, 15%); }
     &.near { background-color: @clrRed; color: white; }
-    &.near:hover { background-color: lighten(@clrRed, 12%) ; }
+    &.near:hover { background-color: lighten(@clrRed, 12%); }
+    &.pressed, &.pressed:hover { background-color: darken(@clrDarkGrey, 10%); transition: none; }
+  }
+}
+
+// Smartphones and touchscreens
+@media (hover: none) and (pointer: coarse) {
+  #keyboard .key {
+    &:hover { background-color: @clrLightGrey; }
+    &.miss:hover { background-color: @clrDarkGrey; }
+    &.hit:hover { background-color: @clrGreen; }
+    &.near:hover { background-color: @clrRed; }
   }
 }
 
@@ -90,5 +110,44 @@ aside {
   text-align: center; white-space: pre-wrap;
   padding: 10px 10px; border-radius: 8px;
   display: none; &.visible { display: block; }
+}
 
+button {
+  -webkit-appearance: none; -moz-appearance: none;
+  border: none; background: none; font-family: inherit; font-size: inherit; color: inherit;
+  padding: 0; margin: 0;
+}
+
+article {
+  display: none; &.visible { display: block; }
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+  overflow-y: auto; padding: 30px 20px 30px 20px;
+}
+
+article>section {
+  display: none; &.visible { display: block; }
+  max-width: 470px; margin: 0 auto;
+  box-shadow: 0px 0px 10px darken(@clrLightGrey, 10%);
+  border-radius: 5px; position: relative; background-color: white; padding: 10px 15px;
+  button.close {
+    display: block; position: absolute; right: 16px; top: 8px;
+    cursor: pointer; color: @clrDarkGrey; font-weight: bold; font-size: @fntBaseSize;
+  }
+  h2 {
+    font-size: @fntBaseSize; font-weight: bold; text-transform: uppercase; text-align: left;
+  }
+  font-size: @fntBaseSize * 0.8;
+  span.letter {
+    display: inline-block; margin-right: 4px; padding-top: 3px; border: 1pt solid @clrDarkGrey;
+    width: 28px; height: 28px; text-align: center; font-weight: bold;
+    &.miss { background-color: @clrDarkGrey; color: white; }
+    &.hit { background-color: @clrGreen; color: white; }
+    &.near { background-color: @clrRed; color: white; }
+  }
+}
+
+#statusPopup {
+  #timeLeft {
+    font-size: @fntBaseSize * 2;
+  }
 }
