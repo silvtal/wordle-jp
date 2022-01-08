@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="stylesheet" href='./app.css'>
+  <script async defer data-domain="jealousmarkup.xyz" src="https://plausible.io/js/plausible.js"></script>
   <script defer src='./app.js'></script>
   <!--LiveReload-->
   <script>
@@ -25,23 +26,28 @@
   </header>
   <article>
     <section id="infoPopup">
-      <h2>Hogy működik?</h2>
+      <h2>Mi ez?</h2>
+      <p>
+        Ez itt <a href="https://twitter.com/powerlanguish">@powerlanguish</a>
+        népszerű <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a>
+        játékának magyar koppintása.
+      </p>
       <p>
         Hat próbálkozásod van, hogy kitaláld a feladott szót.
         A betűk színe minden próbálkozás után mutatja, hogy milyen közel jársz a megfejtéshez.
       </p>
       <p><span class="letter hit">R</span><span class="letter">E</span><span class="letter">T</span><span class="letter">E</span><span class="letter">K</span></p>
-      <p>Az <b>R</b> jó betű: a keresett szóban is az első helyen szerepel.</p>
+      <p>Ez az <b>R</b> jó betű: a keresett szóban is az első helyen szerepel.</p>
       <p><span class="letter">T</span><span class="letter">A</span><span class="letter near">L</span><span class="letter">Á</span><span class="letter">N</span></p>
-      <p>Az <b>L</b> jó betű rossz helyen: a keresett szóban előfordul, de máshol.</p>
+      <p>Ez az <b>L</b> jó betű rossz helyen: a keresett szóban előfordul, de máshol.</p>
       <p><span class="letter">R</span><span class="letter">O</span><span class="letter">H</span><span class="letter">A</span><span class="letter miss">N</span></p>
-      <p>Az <b>N</b> rossz betű: nem szerepel a keresett szóban.</p>
+      <p>Ez az <b>N</b> rossz betű: nem szerepel a keresett szóban.</p>
       <p><b>Minden nap új rejtvény lesz az oldalon!</b></p>
       <button class="close">X</button>
     </section>
     <section id="statusPopup">
       <h2>Várakozás</h2>
-      <p id="statusMsg">A 2. napi rejtvényt megfejtetted!</p>
+      <p id="statusMsg"></p>
       <p>A következő rejtvényig hátravan:<br><span id="timeLeft">00&#8203;:00&#8203;:00</span></p>
       <button class="close">X</button>
     </section>

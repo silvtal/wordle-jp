@@ -1,4 +1,4 @@
-import {puzzleWords, allWords} from "../words/words.js";
+import {puzzleWords, otherWords} from "../words/words.js";
 
 
 function shiftStr(str, val) {
@@ -12,13 +12,19 @@ function shiftStr(str, val) {
 
 class Words {
 
-  isAcceptableWord(word) {
-    word = shiftStr(word, 1);
-    return allWords.has(word);
+  constructor() {
+    this.allWords = new Set();
+    puzzleWords.forEach(word => this.allWords.add(word));
+    otherWords.forEach(word => this.allWords.add(word));
   }
 
-  getPuzzleWord(ix) {
-    let word = puzzleWords[ix];
+  isAcceptableWord(word) {
+    word = shiftStr(word, 1);
+    return this.allWords.has(word);
+  }
+
+  getPuzzleWord(dayIx) {
+    let word = puzzleWords[dayIx];
     return shiftStr(word, -1);
   }
 }

@@ -1,20 +1,47 @@
 import {differenceInDays, addDays} from "date-fns";
+import {Gamestate} from "./gamestate.js";
+import {Words} from "./words.js";
 
 const firstDay = new Date(2022, 0, 6, 4, 0, 0);
 
-class History {
-  constructor() {
-  }
+function dayIndex() {
+  return Math.floor(differenceInDays(new Date(), firstDay));
+}
 
-  lastGameInfo() {
-    return {
-      day: 7,
-      solved: true,
+class History {
+
+  constructor(words) {
+
+    /** @type {Words} */
+    this.words = words;
+
+    /** @type {Array<Gamestate>} */
+    this.games = [];
+
+    let gamesDataStr = localStorage.getItem("games");
+    if (gamesDataStr != null) {
+      let gamesData = JSON.parse(gamesDataStr);
+      for (const gs of gamesData) {
+        Object.setPrototypeOf(gs, Gamestate.prototype);
+        this.games.push(gs);
+      }
     }
   }
 
-  dayIndex() {
-    return Math.floor(differenceInDays(new Date(), firstDay));
+  currentGame() {
+    let dayIx = dayIndex();
+    for (const gs of this.games) {
+      if (gs.dayIx == dayIx) return gs;
+    }
+    let gs = new Gamestate(dayIx, this.words.getPuzzleWord(dayIx));
+    this.games.push(gs);
+    this.save();
+    return gs;
+  }
+
+  save() {
+    let gamesDataStr = JSON.stringify(this.games);
+    localStorage.setItem("games", gamesDataStr);
   }
 
   nextGameDate() {
@@ -27,6 +54,7 @@ class History {
       return addDays(date, 1);
     }
   }
+
 }
 
 export {History};

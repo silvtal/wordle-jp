@@ -28,13 +28,15 @@ function shuffle(array) {
   return array;
 }
 
-function buildWordsJs(pws, aws) {
-  return `let puzzleWords = [];
-let allWords = new Set();
+function buildWordsJs(pws, ows) {
+  return `let puzzleWords = [
 ${pws}
-${aws}
+];
+let otherWords = [
+${ows}
+];
 
-export {puzzleWords, allWords};
+export {puzzleWords, otherWords};
 `;
 }
 
@@ -51,20 +53,19 @@ async function prepWords() {
   let wordsAll = await fs.promises.readFile("words/hu-words-5-filtered.txt", "utf8");
   let words = wordsAll.split(/\r?\n/);
   words = shuffle(words);
-  let pws = "", aws = "";
+  let pws = "", ows = "";
   for (const w of words) {
     if (w == "") continue;
     if (w.startsWith(".")) {
       let word = shiftStr(w.substr(1));
-      aws += `allWords.add("${word}");\n`;
+      ows += `"${word}",\n`;
     }
     else {
       let word = shiftStr(w);
-      pws += `puzzleWords.push("${word}");\n`;
-      aws += `allWords.add("${word}");\n`;
+      pws += `"${word}",\n`;
     }
   }
-  let wordsJs = buildWordsJs(pws, aws);
+  let wordsJs = buildWordsJs(pws, ows);
   await fs.promises.writeFile("words/words.js", wordsJs);
 }
 
@@ -73,7 +74,10 @@ exports = (options = {}) => {
     name: 'customTasks',
     setup(build) {
       build.onStart(async () => {
-        if (options.prod) await prepWords();
+        if (!options.prod) return;
+        await prepWords();
+        try { fs.unlinkSync("public/app.js.map"); } catch {}
+        try { fs.unlinkSync("public/app.css.map"); } catch {}
       });
       build.onEnd(async result => {
         let indexHtml = await fs.promises.readFile("index.html", "utf8");

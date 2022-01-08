@@ -19,9 +19,13 @@ const totalRowCount = 6;
 class Gamestate {
 
   /**
+   * @param dayIx {Number} Day index (this is the nth daily puzzle).
    * @param solution {String} The puzzle's solution.
    */
-  constructor(solution) {
+  constructor(dayIx, solution) {
+
+    /** @type {Number} */
+    this.dayIx = dayIx;
 
     /** @type {String} */
     this.solution = solution;
