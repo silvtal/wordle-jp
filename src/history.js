@@ -28,6 +28,15 @@ class History {
     }
   }
 
+  hasPlayed() {
+    for (const gs of this.games) {
+      for (const word of gs.rows) {
+        if (word.length > 0) return true;
+      }
+    }
+    return false;
+  }
+
   currentGame() {
     let dayIx = dayIndex();
     for (const gs of this.games) {

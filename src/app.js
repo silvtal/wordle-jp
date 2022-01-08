@@ -50,13 +50,13 @@ class App {
     this.initPopup();
 
     if (this.gamestate.isFinished()) this.showStatus();
+    else if (!theHistory.hasPlayed()) this.showInfo();
   }
 
   initPopup() {
     let elmPopup = document.getElementsByTagName("article")[0];
     document.getElementById("showInfo").addEventListener("click", () => {
-      elmPopup.querySelector("#infoPopup").classList.add("visible");
-      elmPopup.classList.add("visible");
+      this.showInfo();
     });
     elmPopup.addEventListener("click", (e) => {
       if (e.target.tagName != "BUTTON" || !e.target.classList.contains("close")) return;
@@ -68,6 +68,23 @@ class App {
         this.countdownIntervalId = null;
       }
     });
+  }
+
+  showInfo() {
+
+    let elmPopup = document.getElementsByTagName("article")[0];
+
+    // Update version from hash in script URL
+    let infoStr = "dbdb";
+    let elmAppScript = document.getElementById("app-js");
+    let reHash = new RegExp("\\?v=(.{4})");
+    let m = reHash.exec(elmAppScript.src);
+    if (m) infoStr = m[1];
+    infoStr = "#" + this.gamestate.dayIx + " " + infoStr;
+    elmPopup.querySelector("#info").innerText = infoStr;
+
+    elmPopup.querySelector("#infoPopup").classList.add("visible");
+    elmPopup.classList.add("visible");
   }
 
   showStatus() {

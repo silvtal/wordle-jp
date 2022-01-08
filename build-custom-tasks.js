@@ -84,8 +84,8 @@ exports = (options = {}) => {
         if (options.prod) {
           let appJsHash = await getHash("public/app.js");
           let appCssHash = await getHash("public/app.css");
-          indexHtml = indexHtml.replace("./app.js", "./app." + appJsHash + ".js");
-          indexHtml = indexHtml.replace("./app.css", "./app." + appCssHash + ".css");
+          indexHtml = indexHtml.replace("./app.js", "./app.js?v=" + appJsHash);
+          indexHtml = indexHtml.replace("./app.css", "./app.css?v=" + appCssHash);
           indexHtml = indexHtml.replace(/<!--LiveReload-->.*<!--LiveReload-->/is, "");
         }
         await fs.promises.writeFile("public/index.html", indexHtml);

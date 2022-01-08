@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="stylesheet" href='./app.css'>
   <script async defer data-domain="jealousmarkup.xyz" src="https://plausible.io/js/plausible.js"></script>
-  <script defer src='./app.js'></script>
+  <script defer src='./app.js' id="app-js"></script>
   <!--LiveReload-->
   <script>
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
@@ -42,7 +42,15 @@
       <p>Ez az <b>L</b> jó betű rossz helyen: a keresett szóban előfordul, de máshol.</p>
       <p><span class="letter">R</span><span class="letter">O</span><span class="letter">H</span><span class="letter">A</span><span class="letter miss">N</span></p>
       <p>Ez az <b>N</b> rossz betű: nem szerepel a keresett szóban.</p>
-      <p><b>Minden nap új rejtvény lesz az oldalon!</b></p>
+      <p><b>Minden nap hajnalban új rejtvény érkezik.</b></p>
+      <hr>
+      <p>
+        Kapcsolat:
+        <span class="right"><a href="https://twitter.com/twilliability">Twitter</a> |
+        <a href="mailto:gabor.reads.this@gmail.com">Email</a></span>
+        <br>
+        <span class="right" id="info">abab</span>
+      </p>
       <button class="close">X</button>
     </section>
     <section id="statusPopup">
