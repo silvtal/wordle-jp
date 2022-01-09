@@ -17,6 +17,8 @@ body {
 }
 main {
   position: relative; width: 100%; max-width: 500px;
+  display: flex; flex-direction: column; justify-content: flex-start; align-content: stretch;
+
   header { border-bottom: 1px solid @clrDarkText; height: 90px; }
   h1, h2 { font-family: inherit; margin: 0; text-align: center; font-weight: bold; }
   h1 { font-size: @fntBaseSize * 2; }
@@ -30,22 +32,29 @@ main {
 }
 
 main>section {
-  width: 100%; display: flex; justify-content: center; flex-wrap: wrap;
-  flex-direction: column; justify-content: flex-start;
+  width: 100%;
 }
 
+
 #grid {
-  position: relative; padding-top: 20px;
-  height: calc(80vh - 180px);
+  flex: 1 1;
+  display: flex; flex-direction: column; justify-content: flex-start; align-content: stretch;
   .row {
-    width: 100%; display: flex; justify-content: center;
+    width: 100%; display: flex; justify-content: center; align-content: stretch;
     height: 16.6%; max-height: @fntBaseSize * 3; padding: 4px;
   }
   .tile {
-    height: 100%; width: calc((80vh - 220px) / 5.5); max-width: @fntBaseSize * 3;
+    height: 100%;
+    aspect-ratio: 1;
     border: 1pt solid #c0c0c0; margin: 4px;
-    font-size: 1.5 * @fntBaseSize; text-transform: uppercase;
+    text-transform: uppercase;
     font-weight: bold; padding-top: 2px; text-align: center;
+    overflow-y: hidden;
+
+    span {
+      display: block; top: 60%; position: relative; margin-top: calc(-1.1 * @fntBaseSize);
+      font-size: 1.5 * @fntBaseSize; line-height: 100%;
+    }
 
     &.filled { border-color: @clrDarkGrey; }
     &.miss, &.hit, &.near { transition: background-color 800ms ease-out; }
@@ -55,25 +64,25 @@ main>section {
   }
 }
 
-@media screen and (max-height: 640px) {
-  #grid .tile { font-size: calc((100vh - 320px) / 13); }
-}
-
+#spacer { height: 5px; flex: 0 0; }
 
 #keyboard {
-  position: absolute; bottom: 0; left: 0;
   font-size: @fntBaseSize;
+  flex: 0 0;
 
   .row {
-    width: 100%; display: flex; justify-content: center;
+    width: 100%; display: flex; flex-wrap: nowrap; align-content: stretch;
   }
+  .spacer { font-size: 0.1px; flex-grow: 1; }
   .key {
-    padding: 0.5em 0.3em; border-radius: 4px;
-    margin: 0 4px 8px 4px; min-width: 2em;
-    cursor: default; user-select: none;
-    text-align: center; font-weight: bold; text-transform: uppercase;
+    flex-grow: 0;
+    padding: 0.5em 0.3em; border-radius: 4px; margin: 0 4px 8px 4px;
+    width: 8vw; max-width: 2em;
+    &.enter, &.back { width: 12vw; max-width: 4em; }
     &.enter { font-size: 0.7em; padding-top: 1.1em; }
 
+    cursor: default; user-select: none;
+    text-align: center; font-weight: bold; text-transform: uppercase;
     background-color: #e0e0e0; transition: background-color 300ms ease-out;
     &:hover { background-color: lighten(#e0e0e0, 5%); }
     &.miss { background-color: @clrDarkGrey; color: white; }
@@ -96,13 +105,32 @@ main>section {
   }
 }
 
-@media screen and (max-width: 420px) {
+// iPhone SE: 375 x 667
+@media screen and (max-width: 450px) {
+
+  main header {
+    height: 70px;
+    h1 { font-size: @fntBaseSize * 1.5; }
+    h2 { font-size: @fntBaseSize * 1.2; }
+  }
+
+  #grid {
+    .tile span {
+      font-size: calc(16px + 2vw);
+      margin-top: calc(-0.7 * (16px + 2vw));
+    }
+  }
+
   #keyboard {
-    font-size: calc(4vw);
-    .key { margin: 1.5px; padding: 0.7em 0.5em; }
+    .key {
+      margin: 1.5px; padding: 0.7em 0.5em;
+      font-size: calc(10px + 2vw); width: 9vw;
+      &.enter { width: 14vw; font-size: calc(4px + 2vw); }
+    }
     .key.enter { padding-top: 1.5em; }
   }
 }
+
 
 aside {
   position: absolute; top: 130px; left: 50%; margin-left: -40%; width: 80%;
