@@ -3,4 +3,5 @@ node_modules
 .idea
 
 public/app.*
+public/index.html
 words/words.js

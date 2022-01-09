@@ -15,15 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   theApp = new App(false);
 });
 
-// OK Update info text
-// OK Words in arrays only
-// OK Persist history
-// OK Startup popup; nth day in popup
-// OK Plausible
-// OK Show word on failed puzzle
-// Publish on JS
-// Sharing: function
-// Sharing: metas
+// OK New words
+// Fix layout
+// Take counter into negative on new day :)
+// Rephrase info
+// Multi-occurrence letter coloring
+// Sharing function
+// Share image / SEO metas
 
 const T = {
   tooFewLetters: "Kevés betű",
