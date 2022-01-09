@@ -2,6 +2,13 @@ const fs = require("fs");
 const path = require("path");
 const md5 = require('md5')
 
+let puzzleStart = [
+  "cpupy",
+  "mb{ûs",
+  "nâslb",
+  "ýhzft",
+];
+
 async function getHash(fn) {
   let content = await fs.promises.readFile(fn, "utf8");
   return md5(content);
@@ -50,19 +57,32 @@ function shiftStr(str) {
 }
 
 async function prepWords() {
+  // First set of words
   let wordsAll = await fs.promises.readFile("words/hu-words-5-filtered.txt", "utf8");
   let words = wordsAll.split(/\r?\n/);
+  // Second set of words
+  let newWordsAll = await fs.promises.readFile("words/szotarhu-5-filter3.txt", "utf8");
+  let newWords = newWordsAll.split(/\r?\n/);
+  words.push(...newWords);
+
   words = shuffle(words);
   let pws = "", ows = "";
+
+  // First append puzzle start. Those words were already used, we don't want to rewrite the past.
+  let pwSet = new Set();
+  for (const w of puzzleStart) {
+    pws += '"' + w + '",\n';
+    pwSet.add(w);
+  }
+
   for (const w of words) {
     if (w == "") continue;
-    if (w.startsWith(".")) {
-      let word = shiftStr(w.substr(1));
-      ows += `"${word}",\n`;
-    }
+    if (w.startsWith(".")) ows += '"' + shiftStr(w.substr(1)) + '",\n';
     else {
-      let word = shiftStr(w);
-      pws += `"${word}",\n`;
+      let wshift = shiftStr(w);
+      if (pwSet.has(wshift)) continue;
+      pws += '"' + wshift + '",\n';
+      pwSet.add(wshift);
     }
   }
   let wordsJs = buildWordsJs(pws, ows);
