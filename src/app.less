@@ -41,20 +41,17 @@ main>section {
   display: flex; flex-direction: column; justify-content: flex-start; align-content: stretch;
   .row {
     width: 100%; display: flex; justify-content: center; align-content: stretch;
-    height: 16.6%; max-height: @fntBaseSize * 3; padding: 4px;
+    height: 16.6%; max-height: @fntBaseSize * 3;
+    padding: 4px; // Will be set from code
   }
   .tile {
     height: 100%;
-    aspect-ratio: 1;
-    border: 1pt solid #c0c0c0; margin: 4px;
-    text-transform: uppercase;
-    font-weight: bold; padding-top: 2px; text-align: center;
-    overflow-y: hidden;
-
-    span {
-      display: block; top: 60%; position: relative; margin-top: calc(-1.1 * @fntBaseSize);
-      font-size: 1.5 * @fntBaseSize; line-height: 100%;
-    }
+    border: 1pt solid #c0c0c0;
+    text-transform: uppercase; font-weight: bold; text-align: center;
+    margin: 4px; // Will be set from code
+    font-size: 1px; // Will be set from code
+    overflow: hidden;
+    span { display: block; height: 0; overflow: visible; }
 
     &.filled { border-color: @clrDarkGrey; }
     &.miss, &.hit, &.near { transition: background-color 800ms ease-out; }
@@ -114,13 +111,6 @@ main>section {
     h2 { font-size: @fntBaseSize * 1.2; }
   }
 
-  #grid {
-    .tile span {
-      font-size: calc(16px + 2vw);
-      margin-top: calc(-0.7 * (16px + 2vw));
-    }
-  }
-
   #keyboard {
     .key {
       margin: 1.5px; padding: 0.7em 0.5em;
@@ -131,6 +121,10 @@ main>section {
   }
 }
 
+// @media screen and (max-height: 500px) {
+//   #grid .row { padding: 2px; }
+//   #grid .tile { margin: 2px; }
+// }
 
 aside {
   position: absolute; top: 130px; left: 50%; margin-left: -40%; width: 80%;

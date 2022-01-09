@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // OK New words
-// Fix layout
+// OK Fix layout
 // Take counter into negative on new day :)
-// Rephrase info
+// OK Rephrase info
 // Multi-occurrence letter coloring
 // Sharing function
 // Share image / SEO metas

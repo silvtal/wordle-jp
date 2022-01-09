@@ -5,11 +5,25 @@ class Grid {
     this.elm = elm;
     this.gamestate = gamestate;
     this.updateView();
-    this.initEvents();
+    this.updateAppearance();
+    window.addEventListener("resize", () => this.updateAppearance());
   }
 
-  initEvents() {
-
+  updateAppearance() {
+    let height = this.elm.offsetHeight;
+    let elmRows = this.elm.querySelectorAll(".row");
+    for (const elmRow of elmRows) {
+      if (height < 300) elmRow.style.padding = "2px";
+      else elmRow.style.padding = "4px";
+    }
+    let elmTiles = this.elm.querySelectorAll(".tile");
+    let tileSize = height / 5 - 8;
+    if (tileSize > elmTiles[0].offsetHeight)tileSize = elmTiles[0].offsetHeight
+    for (const elmTile of elmTiles) {
+      elmTile.style.width = tileSize + "px";
+      elmTile.style.fontSize = Math.floor(elmTile.offsetHeight * 0.6) + "px";
+      if (height < 300) elmTile.style.margin = "2px";
+    }
   }
 
   updateView() {
