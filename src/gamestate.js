@@ -103,10 +103,30 @@ class Gamestate {
     let word = this.rows[ix];
     let res = [];
     for (let pos = 0; pos < word.length; ++pos) {
-      let ls = LetterState.WrongLetter;
-      if (this.solution[pos] == word[pos]) ls = LetterState.RightPlace;
-      else if (this.solution.indexOf(word[pos]) != -1) ls = LetterState.WrongPlace;
-      res.push(new LetterInfo(word[pos], ls));
+      let guessLetter = word[pos];
+      let letterState = LetterState.WrongLetter;
+      if (this.solution[pos] == guessLetter) letterState = LetterState.RightPlace;
+      else if (this.solution.indexOf(guessLetter) != -1) {
+        // Total occurrences of this letter in solution
+        let countInSolution = 0;
+        for (let i = 0; i < this.solution.length; ++i)
+          if (this.solution[i] == guessLetter)
+            ++countInSolution;
+        // Correct in guess, anywhere
+        let totalCorrectInGuess = 0;
+        // Wrong count in guess before this position
+        let wrongCountInGuessBefore = 0;
+        for (let i = 0; i < this.solution.length; ++i) {
+          if (i < pos && word[i] == guessLetter && this.solution[i] != guessLetter)
+            ++wrongCountInGuessBefore;
+          if (word[i] == guessLetter && word[i] == this.solution[i])
+            ++totalCorrectInGuess;
+        }
+        // Based on these, the letter state to show here
+        if (wrongCountInGuessBefore + totalCorrectInGuess >= countInSolution) letterState = LetterState.WrongLetter;
+        else letterState = LetterState.WrongPlace;
+      }
+      res.push(new LetterInfo(guessLetter, letterState));
     }
     return res;
   }
