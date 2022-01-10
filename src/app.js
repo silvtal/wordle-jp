@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // OK Fix layout
 // Take counter into negative on new day :)
 // OK Rephrase info
-// Multi-occurrence letter coloring
+// OK Fix: Multi-occurrence letter coloring
 // Sharing function
 // Share image / SEO metas
 
 const T = {
   tooFewLetters: "Kevés betű",
-  unknownWord: "Ismeretlen szó",
+  unknownWord: "Ismeretlen szó\n(Vagy ragozott alak? Tulajdonnév?)",
   congrats: "Ez az!",
   puzzleSuccess: "A ${day}. napi rejtvényt megfejtetted!",
   puzzleFail: "A ${day}. napi rejtvény kifogott rajtad.",
