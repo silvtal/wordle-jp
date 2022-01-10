@@ -130,6 +130,26 @@ class Gamestate {
     }
     return res;
   }
+
+  getShareText() {
+    let rowInfos = [];
+    for (let i = 0; i < this.finishedRows; ++i) {
+      rowInfos.push(this.getFinishedRow(i));
+    }
+    let res = "";
+    for (const ri of rowInfos) {
+      if (res.length > 0) res += "\n";
+      let first = true;
+      for (const li of ri) {
+        if (!first) res += " ";
+        first = false;
+        if (li.state == LetterState.WrongLetter) res += "⬜";
+        else if (li.state == LetterState.WrongPlace) res += "🟥";
+        else if (li.state == LetterState.RightPlace) res += "🟩";
+      }
+    }
+    return res;
+  }
 }
 
 export { LetterState, LetterInfo, Gamestate };

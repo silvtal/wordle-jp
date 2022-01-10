@@ -20,15 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // Take counter into negative on new day :)
 // OK Rephrase info
 // OK Fix: Multi-occurrence letter coloring
-// Sharing function
-// Share image / SEO metas
+// OK Sharing function
+// OK Share image / SEO metas
+// Letter alignment; header height; ENTER size
 
 const T = {
+  title: "Szó reggelt! Napi szófejtő.",
   tooFewLetters: "Kevés betű",
   unknownWord: "Ismeretlen szó\n(Vagy ragozott alak? Tulajdonnév?)",
   congrats: "Ez az!",
   puzzleSuccess: "A ${day}. napi rejtvényt megfejtetted!",
   puzzleFail: "A ${day}. napi rejtvény kifogott rajtad.",
+  shareClipboard: "Az eredmény a vágólapon!",
+  shareText: "Szó reggelt!\n{day}. napi rejtvény: 6 / {guesses}\n\n",
 }
 
 class App {
@@ -46,6 +50,7 @@ class App {
     this.gamestate.onGamestateChanged(() => this.onGamestateChanged());
 
     this.initPopup();
+    this.initShare();
 
     if (this.gamestate.isFinished()) this.showStatus();
     else if (!theHistory.hasPlayed()) this.showInfo();
@@ -64,6 +69,24 @@ class App {
       if (this.countdownIntervalId) {
         clearInterval(this.countdownIntervalId);
         this.countdownIntervalId = null;
+      }
+    });
+  }
+
+  initShare() {
+    document.getElementById("shareGeneral").addEventListener("click", () => {
+      let msg = T.shareText;
+      msg = msg.replace("{day}", this.gamestate.dayIx);
+      msg = msg.replace("{guesses}", this.gamestate.finishedRows);
+      msg += this.gamestate.getShareText();
+      if (navigator.share) {
+        navigator.share({
+          title: T.title,
+          text: msg,
+        }).then(() => {}).catch();
+      } else {
+        navigator.clipboard.writeText(msg);
+        this.warning.show(T.shareClipboard);
       }
     });
   }

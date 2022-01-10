@@ -31,6 +31,29 @@ main {
   }
 }
 
+// <div id="xx">
+//   <p><span>S</span><span>Z</span><span>Ó</span></p>
+//   <p><span>R</span><span>E</span><span>G</span><span>G</span><span>E</span><span>L</span><span>T</span></p>
+//   <p class="motto">~ napi szófejtő ~</p>
+// </div>
+// #xx {
+//   position: fixed; top: 30; left: 500; width: 800px; height: 420px;
+//   background-color: white; z-index: 2;
+//   border: 1px solid black;
+//
+//   padding-top: 90px;
+//   p { margin: 0 0 8px 0; padding: 0; width: 100%; text-align: center; }
+//   p:first-child  span { background-color: @clrRed; }
+//   span {
+//     display: inline-block;
+//     color: white; background-color: @clrGreen;
+//     width: 80px; height: 80px;
+//     margin-left: 8px; &:first-child { margin-left: 0; }
+//     font-size: 60px; font-weight: bold; line-height: 71px;
+//   }
+//   p.motto { font-weight: bold; font-size: 44px; color: #555; }
+// }
+
 main>section {
   width: 100%;
 }
@@ -127,6 +150,7 @@ main>section {
 // }
 
 aside {
+  z-index: 3;
   position: absolute; top: 130px; left: 50%; margin-left: -40%; width: 80%;
   background-color: @clrDarkText; color: white;
   text-align: center; white-space: pre-wrap;
@@ -174,7 +198,14 @@ article>section {
 }
 
 #statusPopup {
-  #timeLeft {
-    font-size: @fntBaseSize * 2;
+  #timeLeft { font-size: @fntBaseSize * 2; }
+  #shareGeneral {
+    position: relative;
+    padding: 9px 92px 10px 16px; width: 210px; border-radius: 4px;
+    background-color: @clrGreen; color: white;
+    &:hover { background-color: lighten(@clrGreen, 10%); }
+    cursor: default; user-select: none;
+    font-size: 22px; text-transform: uppercase;
+    svg { width: 24px; height: 24px; display: block; position: absolute; right: 16px; top: 10px; }
   }
 }
