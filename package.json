@@ -1,7 +1,8 @@
 {
   "name": "wordle-hu",
   "version": "0.0.1",
-  "description": "Hungarian version of @powerlanguish's Wordle",
+  "description": "Hungarian adaptation of @powerlanguish's Wordle",
+  "license": "MIT",
   "author": {
     "name": "Gábor L Ugray",
     "email": "gabor.reads.this@gmail.com"

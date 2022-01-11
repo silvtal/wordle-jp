@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Counter on new day: "quiz ready"?
+// README
 
 const T = {
   title: "Szó reggelt! Napi szófejtő.",
@@ -54,6 +55,13 @@ class App {
     document.getElementById("showInfo").addEventListener("click", () => {
       this.showInfo();
     });
+    document.getElementById("showStatus").addEventListener("click", () => {
+      if (!this.gamestate.isFinished()) return;
+      this.showStatus();
+    });
+    if (this.gamestate.isFinished()) {
+      document.getElementById("showStatus").classList.add("visible");
+    }
     elmPopup.addEventListener("click", (e) => {
       if (e.target.tagName != "BUTTON" || !e.target.classList.contains("close")) return;
       let elmSections = elmPopup.querySelectorAll("section");
@@ -114,6 +122,9 @@ class App {
     elmPopup.querySelector("#statusPopup").classList.add("visible");
     elmPopup.classList.add("visible");
 
+    elmPopup.querySelector("#sharePreview").innerHTML =
+      "<span>" + this.gamestate.getShareText() + "</span>";
+
     let nextDate = theHistory.nextGameDate();
     updateCounter();
     this.countdownIntervalId = setInterval(updateCounter, 50);
@@ -153,13 +164,16 @@ class App {
     }
     this.gamestate.commitWord();
     if (!this.gamestate.isFinished()) return;
-
+    // Game just finished now
     if (this.gamestate.isSolved()) {
       this.warning.show(T.congrats);
     } else {
       this.warning.show(this.gamestate.solution.toUpperCase());
     }
-    setTimeout(() => this.showStatus(), 2000);
+    setTimeout(() => {
+      document.getElementById("showStatus").classList.add("visible");
+      this.showStatus();
+    }, 2000);
   }
 
   onBack() {

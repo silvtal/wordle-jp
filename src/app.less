@@ -20,40 +20,26 @@ main {
   position: relative; width: 100%; max-width: 500px;
   display: flex; flex-direction: column; justify-content: flex-start; align-content: stretch;
 
-  header { border-bottom: 1pt solid @clrLightGrey; height: 90px;  }
+  header {
+    border-bottom: 1pt solid @clrLightGrey; height: 90px;
+    button {
+      display: block; position: absolute; cursor: pointer;
+      width:  24px; height: 24px; border-radius: 12px; text-align: center;
+      border: 1.5px solid @clrDarkGrey; color: @clrDarkGrey;
+      font-size: 14px; font-weight: bold;
+    }
+    #showInfo { right: 15px; top: 15px; }
+    #showStatus {
+      display: none; &.visible { display: block; }
+      left: 15px; top: 15px;
+      svg { width: 13px; height: 13px; display: inline-block; margin: 3px 0 0 -2px; }
+      svg path { fill: @clrDarkGrey; }
+    }
+  }
   h1, h2 { font-family: inherit; margin: 0; text-align: center; font-weight: bold; }
   h1 { font-size: @fntBaseSize * 2; text-transform: uppercase; }
   h2 { font-size: @fntBaseSize * 1.5; margin-top: -5px; }
-  #showInfo {
-    display: block; position: absolute; right: 15px; top: 15px; cursor: pointer;
-    width:  24px; height: 24px; border-radius: 12px; text-align: center;
-    border: 1.5px solid @clrDarkGrey; color: @clrDarkGrey;
-    font-size: 14px; font-weight: bold;
-  }
 }
-
-// <div id="xx">
-//   <p><span>S</span><span>Z</span><span>Ó</span></p>
-//   <p><span>R</span><span>E</span><span>G</span><span>G</span><span>E</span><span>L</span><span>T</span></p>
-//   <p class="motto">~ napi szófejtő ~</p>
-// </div>
-// #xx {
-//   position: fixed; top: 30; left: 500; width: 800px; height: 420px;
-//   background-color: white; z-index: 2;
-//   border: 1px solid black;
-//
-//   padding-top: 90px;
-//   p { margin: 0 0 8px 0; padding: 0; width: 100%; text-align: center; }
-//   p:first-child  span { background-color: @clrRed; }
-//   span {
-//     display: inline-block;
-//     color: white; background-color: @clrGreen;
-//     width: 80px; height: 80px;
-//     margin-left: 8px; &:first-child { margin-left: 0; }
-//     font-size: 60px; font-weight: bold; line-height: 71px;
-//   }
-//   p.motto { font-weight: bold; font-size: 44px; color: #555; }
-// }
 
 main>section {
   width: 100%;
@@ -199,11 +185,45 @@ article>section {
   #timeLeft { font-size: @fntBaseSize * 2; }
   #shareGeneral {
     position: relative;
-    padding: 9px 92px 10px 16px; width: 210px; border-radius: 4px;
-    background-color: @clrGreen; color: white;
+    padding: 10px 0 13px 0; width: 250px; border-radius: 4px;
+    background-color: @clrGreen; color: white; text-align: center;
     &:hover { background-color: lighten(@clrGreen, 10%); }
     cursor: default; user-select: none;
     font-size: 22px; text-transform: uppercase;
-    svg { width: 24px; height: 24px; display: block; position: absolute; right: 16px; top: 10px; }
+    svg { width: 24px; height: 24px; display: block; position: absolute; right: 12px; top: 12px; }
+    svg path { fill: white; }
+    #sharePreview {
+      width: 35px; height: 100%; position: absolute; left: 12px; top: 0;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    #sharePreview span {
+      display: block; font-size: 4px; white-space: pre-wrap; line-height: 1.5;
+      border: 1px solid white; padding: 1px;
+    }
   }
 }
+
+
+// HTML to render the image used in og:image
+// <div id="xx">
+//   <p><span>S</span><span>Z</span><span>Ó</span></p>
+//   <p><span>R</span><span>E</span><span>G</span><span>G</span><span>E</span><span>L</span><span>T</span></p>
+//   <p class="motto">~ napi szófejtő ~</p>
+// </div>
+// #xx {
+//   position: fixed; top: 30; left: 500; width: 800px; height: 420px;
+//   background-color: white; z-index: 2;
+//   border: 1px solid black;
+//
+//   padding-top: 90px;
+//   p { margin: 0 0 8px 0; padding: 0; width: 100%; text-align: center; }
+//   p:first-child  span { background-color: @clrRed; }
+//   span {
+//     display: inline-block;
+//     color: white; background-color: @clrGreen;
+//     width: 80px; height: 80px;
+//     margin-left: 8px; &:first-child { margin-left: 0; }
+//     font-size: 60px; font-weight: bold; line-height: 71px;
+//   }
+//   p.motto { font-weight: bold; font-size: 44px; color: #555; }
+// }
