@@ -15,14 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   theApp = new App(false);
 });
 
-// OK New words
-// OK Fix layout
-// Take counter into negative on new day :)
-// OK Rephrase info
-// OK Fix: Multi-occurrence letter coloring
-// OK Sharing function
-// OK Share image / SEO metas
-// Letter alignment; header height; ENTER size
+// Counter on new day: "quiz ready"?
 
 const T = {
   title: "Szó reggelt! Napi szófejtő.",

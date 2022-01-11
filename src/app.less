@@ -2,6 +2,7 @@
 // Favicon: https://imgbin.com/png/L7gMHybj/alarm-clock-icon-png
 
 @fntBaseSize: 18px;
+@fntBaseFamily: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
 @clrDarkText: #303030;
 @clrDarkGrey: #707375;
 @clrLightGrey: #e0e0e0;
@@ -12,17 +13,17 @@
 html, body { height: 100%; overflow: hidden; }
 body {
   margin: 0; display: flex; justify-content: center;
-  font-family: "Segoe UI", "San Francisco", "Helvetica Neue", sans-serif;
+  font-family: @fntBaseFamily;
   font-size: @fntBaseSize; color: @clrDarkText;
 }
 main {
   position: relative; width: 100%; max-width: 500px;
   display: flex; flex-direction: column; justify-content: flex-start; align-content: stretch;
 
-  header { border-bottom: 1px solid @clrDarkText; height: 90px; }
+  header { border-bottom: 1pt solid @clrLightGrey; height: 90px;  }
   h1, h2 { font-family: inherit; margin: 0; text-align: center; font-weight: bold; }
-  h1 { font-size: @fntBaseSize * 2; }
-  h2 { font-size: @fntBaseSize * 1.5; }
+  h1 { font-size: @fntBaseSize * 2; text-transform: uppercase; }
+  h2 { font-size: @fntBaseSize * 1.5; margin-top: -5px; }
   #showInfo {
     display: block; position: absolute; right: 15px; top: 15px; cursor: pointer;
     width:  24px; height: 24px; border-radius: 12px; text-align: center;
@@ -62,6 +63,7 @@ main>section {
 #grid {
   flex: 1 1;
   display: flex; flex-direction: column; justify-content: flex-start; align-content: stretch;
+  visibility: hidden; // Will be removed from code, once tiles sizes are fixed
   .row {
     width: 100%; display: flex; justify-content: center; align-content: stretch;
     height: 16.6%; max-height: @fntBaseSize * 3;
@@ -71,6 +73,7 @@ main>section {
     height: 100%;
     border: 1pt solid #c0c0c0;
     text-transform: uppercase; font-weight: bold; text-align: center;
+    padding-top: 3px;
     margin: 4px; // Will be set from code
     font-size: 1px; // Will be set from code
     overflow: hidden;
@@ -115,7 +118,7 @@ main>section {
   }
 }
 
-// Smartphones and touchscreens
+// Smartphones and touchscreen
 @media (hover: none) and (pointer: coarse) {
   #keyboard .key {
     &:hover { background-color: @clrLightGrey; }
@@ -129,25 +132,20 @@ main>section {
 @media screen and (max-width: 450px) {
 
   main header {
-    height: 70px;
-    h1 { font-size: @fntBaseSize * 1.5; }
-    h2 { font-size: @fntBaseSize * 1.2; }
+    height: 57px; padding-top: 3px;
+    h1 { font-size: @fntBaseSize * 1.3; }
+    h2 { font-size: @fntBaseSize * 0.9; margin-top: 0; }
   }
 
   #keyboard {
     .key {
       margin: 1.5px; padding: 0.7em 0.5em;
       font-size: calc(10px + 2vw); width: 9vw;
-      &.enter { width: 14vw; font-size: calc(4px + 2vw); }
+      &.enter { width: 5em; max-width: none; font-size: calc(4px + 2vw); }
     }
     .key.enter { padding-top: 1.5em; }
   }
 }
-
-// @media screen and (max-height: 500px) {
-//   #grid .row { padding: 2px; }
-//   #grid .tile { margin: 2px; }
-// }
 
 aside {
   z-index: 3;
@@ -160,7 +158,7 @@ aside {
 
 button {
   -webkit-appearance: none; -moz-appearance: none;
-  border: none; background: none; font-family: inherit; font-size: inherit; color: inherit;
+  border: none; background: none; font-family: sans-serif; font-size: inherit; color: inherit;
   padding: 0; margin: 0;
 }
 

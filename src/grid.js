@@ -24,6 +24,7 @@ class Grid {
       elmTile.style.fontSize = Math.floor(elmTile.offsetHeight * 0.6) + "px";
       if (height < 300) elmTile.style.margin = "2px";
     }
+    this.elm.style.visibility = "visible";
   }
 
   updateView() {
