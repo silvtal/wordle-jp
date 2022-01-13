@@ -4,7 +4,8 @@ This is an adaptation of Josh Wardle's original game, Wordle, into Japanese. For
 
 ### Japanese adaptation and motivation
 
-This game uses hiragana instead of the Latin alphabet. I decided to make this version in order to both get experience with HTML and learn more Japanese
+<!--This game uses hiragana instead of the Latin alphabet. -->
+I considered making a hiragana version, but I thought that maybe it would be hard to find a balance between number of kana, word length and tries. Might add that version too in the future. I decided to make this version in order to both get experience with HTML and learn more Japanese
 vocabulary.
 
 ### How to build and develop
