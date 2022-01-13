@@ -12,6 +12,7 @@
     "esbuild-plugin-less": "^1.1.6",
     "livereload": "0.9.3",
     "md5": "^2.3.0",
+    "node-linux-x64": "^17.3.0",
     "static-server": "2.2.1"
   },
   "dependencies": {
