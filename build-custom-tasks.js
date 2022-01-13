@@ -3,10 +3,7 @@ const path = require("path");
 const md5 = require('md5')
 
 let puzzleStart = [
-  "cpupy",
-  "mb{ûs",
-  "nâslb",
-  "ýhzft",
+  "uwwwu",
 ];
 
 async function getHash(fn) {
@@ -58,10 +55,10 @@ function shiftStr(str) {
 
 async function prepWords() {
   // First set of words
-  let wordsAll = await fs.promises.readFile("words/hu-words-5-filtered.txt", "utf8");
+  let wordsAll = await fs.promises.readFile("words/jp-words-5-filtered.txt", "utf8");
   let words = wordsAll.split(/\r?\n/);
   // Second set of words
-  let newWordsAll = await fs.promises.readFile("words/szotarhu-5-filter3.txt", "utf8");
+  let newWordsAll = await fs.promises.readFile("words/wordle-jp-5-filter2.txt", "utf8");
   let newWords = newWordsAll.split(/\r?\n/);
   words.push(...newWords);
 

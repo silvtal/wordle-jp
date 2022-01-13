@@ -2,7 +2,7 @@ import {differenceInDays, addDays} from "date-fns";
 import {Gamestate} from "./gamestate.js";
 import {Words} from "./words.js";
 
-const firstDay = new Date(2022, 0, 6, 4, 0, 0);
+const firstDay = new Date(2022, 0, 13, 4, 0, 0);
 
 function dayIndex() {
   return Math.floor(differenceInDays(new Date(), firstDay));

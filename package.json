@@ -1,11 +1,11 @@
 {
-  "name": "wordle-hu",
+  "name": "wordle-jp",
   "version": "0.0.1",
-  "description": "Hungarian adaptation of @powerlanguish's Wordle",
+  "description": "Japanese adaptation of @powerlanguish's Wordle",
   "license": "MIT",
   "author": {
-    "name": "Gábor L Ugray",
-    "email": "gabor.reads.this@gmail.com"
+    "name": "Silvia Talavera Marcos",
+    "email": "stalaveramarcos@gmail.com"
   },
   "devDependencies": {
     "esbuild": "0.13.12",

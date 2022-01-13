@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // README
 
 const T = {
-  title: "Szó reggelt! Napi szófejtő.",
-  tooFewLetters: "Kevés betű",
-  unknownWord: "Ismeretlen szó\n(Vagy ragozott alak? Tulajdonnév?)",
-  congrats: "Ez az!",
-  puzzleSuccess: "A ${day}. napi rejtvényt megfejtetted!",
-  puzzleFail: "A ${day}. napi rejtvény kifogott rajtad.",
-  shareClipboard: "Az eredmény a vágólapon!",
-  shareText: "Szó reggelt!\n{day}. napi rejtvény: 6 / {guesses}\n\n",
+  title: "どうも! 日本語のWordle",
+  tooFewLetters: "文字が足りませんよ",
+  unknownWord: "あっ\nその言葉は辞書にありませんよ！",
+  congrats: "おめでとうございます！",
+  puzzleSuccess: "{day}のパズルを完成しました！",
+  puzzleFail: "${day}のパズルに負けてしまいました！",
+  shareClipboard: "クリップボードにコピーしました！",
+  shareText: "日本語のWordle！\n{day}\n6 / {guesses}のトライ\n\n",
 }
 
 class App {

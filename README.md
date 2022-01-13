@@ -4,10 +4,7 @@ This is an adaptation of Josh Wardle's original game, Wordle, into Japanese. For
 
 ### Japanese adaptation and motivation
 
-This game uses hiragana instead of the Latin alphabet. Since there are double the symbols in the 
-hiragana alphabet, I decided to add more rows/tries.
-
-I decided to make this version in order to both get experience with HTML and learn more Japanese
+This game uses hiragana instead of the Latin alphabet. I decided to make this version in order to both get experience with HTML and learn more Japanese
 vocabulary.
 
 ### How to build and develop
@@ -27,12 +24,6 @@ The `public` folder contains everything to publish as a static site.
 
 ### Japanese word list
 
-The underlying 5-kana words have been compiled from multiple sources:
+The underlying 4-kana words have been compiled from [JapaneseWordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html). The list has been manually revised and curated. See NICT licence [here](https://github.com/silvtal/wordle-jp-dev/blob/main/words/japanese_wordnet_words/LICENSE).
 
-<!-- TODO look for sources ! -->
-
-The list has been manually revised and curated to remove noise, proper names and conjugated forms.
-The quizzes also omit slang, obvious borrowings, non-standard and vulgar words.
-
-<!-- TODO curate ! -->
-
+Conversion from kanji to hiragana was done with [KAKASI](http://kakasi.namazu.org/index.html.en). Copyright (C) 1999-2001 KAKASI project.
