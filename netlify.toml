@@ -3,4 +3,4 @@
   publish = "publish"
 
 [[plugins]]
-  package = "node-linux-x64@17.3.0"
+  package = "node-linux-x64"
