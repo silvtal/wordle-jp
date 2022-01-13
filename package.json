@@ -7,6 +7,12 @@
     "name": "Silvia Talavera Marcos",
     "email": "stalaveramarcos@gmail.com"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "devDependencies": {
     "esbuild": "0.13.12",
     "esbuild-plugin-less": "^1.1.6",

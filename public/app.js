@@ -244,6 +244,7 @@
 
   // words/words.js
   var puzzleWords = [
+    "uwwwu",
     "tijlv",
     "spnbo",
     "ljibo",
