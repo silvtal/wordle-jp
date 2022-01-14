@@ -1,6 +1,6 @@
 [build]
   command = "node build.js"
-  publish = "publish"
+  publish = "public"
 
 [[plugins]]
   package = "node-linux-x64"
