@@ -8,7 +8,7 @@ You can play [here](https://wordle-jp.netlify.app/)
 
 ### Japanese adaptation and motivation
 
-This game uses hiragana instead of the Latin alphabet.
+This game uses romaji instead of kana.
 
 ⚠️ This is still a work in progress. I plan to add a hiragana version, maybe with 4 kana instead of 5 characters.
 
