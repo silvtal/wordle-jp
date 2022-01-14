@@ -1,9 +1,6 @@
 node_modules
-yarn-error.log
 words/japanese_wordnet_words
 hiragana.index.html
-build.js
-netlify.toml
 
 # Local Netlify folder
 .netlify
