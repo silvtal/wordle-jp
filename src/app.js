@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // README
 
 const T = {
-  title: "どうも! 日本語のWordle",
+  title: "どうも! Wordleの日本語バージョン",
   tooFewLetters: "文字が足りませんよ",
-  unknownWord: "あっ\nその言葉は辞書にありませんよ！",
+  unknownWord: "あっ\nその単語は辞書にありませんよ！",
   congrats: "おめでとうございます！",
-  puzzleSuccess: "{day}のパズルを完成しました！",
-  puzzleFail: "${day}のパズルに負けてしまいました！",
+  puzzleSuccess: "{day}つ目のパズルを完成しました！",
+  puzzleFail: "${day}つ目のパズルに負けてしまいました！",
   shareClipboard: "クリップボードにコピーしました！",
-  shareText: "日本語のWordle！\n{day}\n6 / {guesses}のトライ\n\n",
+  shareText: "日本語のWordle！\n#{day}\n6 / {guesses}のトライ\n\n",
 }
 
 class App {

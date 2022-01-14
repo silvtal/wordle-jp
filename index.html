@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>どうも！ • Wordleの日本語cloneへようこそ</title>
-  <meta name="description" content="言葉を6回のトライで当たってみてください。毎日新しいパズルが出題されます。">
+  <title>どうも！ • Wordleの日本語バージョンへようこそ</title>
+  <meta name="description" content="お題の単語を6回のトライで当ててみてください。試行錯誤のゲームです。">
 
   <meta property="og:url" content="https://wordle-jp.netlify.app/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="どうも！ • Wordleの日本語cloneへようこそ">
-  <meta property="og:description" content="言葉を6回のトライで当ててみてください。毎日新しいパズルが出題されます。">
+  <meta property="og:title" content="どうも！ • Wordleの日本語バージョンへようこそ">
+  <meta property="og:description" content="お題の単語を6回のトライで当ててみてください。試行錯誤のゲームです。">
   <meta property="og:image" content="https://i.ibb.co/N2sCFJP/samune.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -29,7 +30,7 @@
 <main>
   <header>
     <h1>どうも！</h1>
-    <h2>Wordleの日本語cloneへようこそ</h2>
+    <h2>Wordleの日本語バージョンへようこそ</h2>
     <button id="showInfo">?</button>
     <button id="showStatus">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 57.884 57.884">
@@ -46,15 +47,14 @@
     <section id="infoPopup">
       <h2>プレイ方法</h2>
       <p>
-        言葉を6回のトライで当てってみるのです。試行錯誤のゲームです。
-        試行のあと、文字の色が変わるだろう。その色は、正しい答えにどれぐらい近づいたかを示しています。
+        お題の単語を6回のトライで当ててみてください。試行錯誤のゲームです。単語を入力し、（エンターを押すと、）文字の色がかわります。その色はお題の単語にどれぐらい近かいかを示しています。
       </p>
       <p><span class="letter hit">k</span><span class="letter">i</span><span class="letter">b</span><span class="letter">u</span><span class="letter">n</span></p>
-      <p><b>k</b>は正しい言葉の中にあって、正しい空白に書いてあります。/p>
+      <p><b>k</b>はお題の単語の中に含まれていて、正しいマスに入っています。/p>
       <p><span class="letter">k</span><span class="letter">i</span><span class="letter near">n</span><span class="letter">o</span><span class="letter">u</span></span></p>
-      <p><b>n</b>は正しい言葉の中に入っているんですが、別の空白に書くべきです。</p>
+      <p><b>n</b>はお題の単語の中に含まれていますが、別のマスに当てはまります。</p>
       <p><span class="letter">m</span><span class="letter miss">u</span><span class="letter">g</span><span class="letter">e</span><span class="letter">n</span></p>
-      <p>そして、こちらの<b>u</b>は正しい言葉の中入っていません</p></br>
+      <p>そして、こちらの<b>u</b>はお題の単語の中に入っていません</p></br>
       <p><b>毎日新しいパズルが出題されます。</b></p>
       <hr>
       <p>
@@ -74,7 +74,7 @@
       <button class="close">X</button>
     </section>
     <section id="statusPopup">
-      <h2>待機</h2>
+      <h2>ゲーム結果</h2>
       <p id="statusMsg"></p>
       <p>
         <div id="shareGeneral">
