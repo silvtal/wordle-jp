@@ -1,5 +1,6 @@
 node_modules
 words/japanese_wordnet_words
+words/bad-words.txt
 hiragana.index.html
 
 # Local Netlify folder
