@@ -26,7 +26,7 @@ const T = {
   puzzleSuccess: "${day}つ目のパズルを完成しました！",
   puzzleFail: "${day}つ目のパズルに負けてしまいました！",
   shareClipboard: "クリップボードにコピーしました！",
-  shareText: "日本語のWordle！\n#${day}\n6 / {guesses}のトライ\n\n",
+  shareText: "日本語のWordle（ロマジ）\n#{day}\n {guesses}/6\nhttps://wordle-jp.netlify.app/\n",
 }
 
 class App {

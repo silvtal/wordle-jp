@@ -343,7 +343,6 @@ bifuu
 bigin
 bihin
 bijin
-bijon
 bikao
 bikei
 bikou
@@ -1627,7 +1626,6 @@ issui
 isuka
 isuru
 isuta
-isuto
 itaba
 itako
 itaku
@@ -1667,7 +1665,6 @@ iyasu
 iyoku
 izeru
 izumi
-izumu
 izure
 jaaku
 jagon
@@ -2427,8 +2424,6 @@ kyori
 kyota
 kyoui
 kyuba
-kyubu
-kyuri
 kyuui
 maaji
 machi
@@ -2670,7 +2665,6 @@ mukou
 mukui
 mukuu
 mumei
-munei
 munen
 munku
 munou
@@ -3004,7 +2998,6 @@ oparu
 opasu
 opera
 operu
-oppai
 opuna
 oraku
 oraru

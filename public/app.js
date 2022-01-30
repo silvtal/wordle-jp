@@ -5088,7 +5088,7 @@
     puzzleSuccess: "${day}\u3064\u76EE\u306E\u30D1\u30BA\u30EB\u3092\u5B8C\u6210\u3057\u307E\u3057\u305F\uFF01",
     puzzleFail: "${day}\u3064\u76EE\u306E\u30D1\u30BA\u30EB\u306B\u8CA0\u3051\u3066\u3057\u307E\u3044\u307E\u3057\u305F\uFF01",
     shareClipboard: "\u30AF\u30EA\u30C3\u30D7\u30DC\u30FC\u30C9\u306B\u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F\uFF01",
-    shareText: "\u65E5\u672C\u8A9E\u306EWordle\uFF01\n#${day}\n6 / {guesses}\u306E\u30C8\u30E9\u30A4\n\n"
+    shareText: "\u65E5\u672C\u8A9E\u306EWordle\uFF08\u30ED\u30DE\u30B8\uFF09\n#{day}\n {guesses}/6\nhttps://wordle-jp.netlify.app/\n"
   };
   var App = class {
     constructor(testing) {
