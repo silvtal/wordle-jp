@@ -5710,6 +5710,7 @@
     title: "\u3069\u3046\u3082! Wordle\u306E\u65E5\u672C\u8A9E\u30D0\u30FC\u30B8\u30E7\u30F3",
     tooFewLetters: "\u6587\u5B57\u304C\u8DB3\u308A\u307E\u305B\u3093\u3088",
     unknownWord: "\u3042\u3063\n\u305D\u306E\u5358\u8A9E\u306F\u8F9E\u66F8\u306B\u3042\u308A\u307E\u305B\u3093\u3088\uFF01",
+    congrats: "\u304A\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307E\u3059\uFF01",
     puzzleSuccess: "${day}\u3064\u76EE\u306E\u30D1\u30BA\u30EB\u3092\u5B8C\u6210\u3057\u307E\u3057\u305F\uFF01",
     puzzleFail: "${day}\u3064\u76EE\u306E\u30D1\u30BA\u30EB\u306B\u8CA0\u3051\u3066\u3057\u307E\u3044\u307E\u3057\u305F\uFF01",
     shareClipboard: "\u30AF\u30EA\u30C3\u30D7\u30DC\u30FC\u30C9\u306B\u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F\uFF01",
@@ -5901,7 +5902,8 @@
       if (!this.gamestate.isFinished())
         return;
       if (this.gamestate.isSolved()) {
-        setTimeout(doConfetti, 200);
+        setTimeout(doConfetti, 10);
+        this.warning.show(T.congrats);
       } else {
         this.warning.show(this.gamestate.solution.toUpperCase());
       }
@@ -5935,10 +5937,9 @@
     }
   };
   function doConfetti() {
-    confetti_module_default();
     setTimeout(() => {
       confetti_module_default();
-    }, 800);
+    }, 10);
   }
   function setDarkLightClass() {
     if (theSettings.getDisplayMode() == DisplayMode.Dark) {

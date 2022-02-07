@@ -40,6 +40,7 @@ const T = {
   title: "どうも! Wordleの日本語バージョン",
   tooFewLetters: "文字が足りませんよ",
   unknownWord: "あっ\nその単語は辞書にありませんよ！",
+  congrats: "おめでとうございます！",
   puzzleSuccess: "${day}つ目のパズルを完成しました！",
   puzzleFail: "${day}つ目のパズルに負けてしまいました！",
   shareClipboard: "クリップボードにコピーしました！",
@@ -254,7 +255,8 @@ class App {
     if (!this.gamestate.isFinished()) return;
     // Game just finished now
     if (this.gamestate.isSolved()) {
-      setTimeout(doConfetti, 200);
+      setTimeout(doConfetti, 10);
+      this.warning.show(T.congrats);
     } else {
       this.warning.show(this.gamestate.solution.toUpperCase());
     }
@@ -296,10 +298,10 @@ class App {
 }
 
 function doConfetti() {
-  confetti();
+//  confetti();
   setTimeout(() => {
     confetti();
-  }, 800);
+  }, 10); //800);
 }
 
 

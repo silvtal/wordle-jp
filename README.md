@@ -10,11 +10,9 @@ You can play [here](https://wordle-jp.netlify.app/)
 
 This game uses romaji instead of kana.
 
-⚠️ This is still a work in progress. I plan to add a hiragana version, maybe with 4 kana instead of 5 characters.
+I considered making a hiragana version, but I thought that maybe it would be hard to find a balance between number of kana, word length and tries. That's why I made a romaji version.
 
-I considered starting with a hiragana version, but I thought that maybe it would be hard to find a balance between number of kana, word length and tries. That's why I made a romaji version first.
-
-I wanted to make this version in order to both get experience with HTML/Node.js and learn new Japanese vocabulary.
+I wanted to make this game in order to both get experience with HTML/Node.js and learn new Japanese vocabulary.
 
 ---------
 
