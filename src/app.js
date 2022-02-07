@@ -1,28 +1,45 @@
+import {DisplayMode, ColorScheme, Settings} from "./settings.js";
+import {Reloader} from "./reloader.js";
 import {LetterState, LetterInfo, Gamestate} from "./gamestate.js";
 import {History} from "./history.js";
 import {Warning} from "./warning.js";
 import {Keyboard} from "./keyboard.js";
 import {Grid} from  "./grid.js";
 import {Words} from "./words.js";
-
+import confetti from "canvas-confetti";
+import "./gamestate.test.js";
+ 
+let theReloader = new Reloader();
+let theSettings = new Settings();
 let theWords;
 let theHistory;
 let theApp;
 
+
+setDarkLightClass();
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  let timeVal = new Date().getTime();
+  if (timeVal % 10 == 0)
+    plausible();
+
   theWords = new Words();
   theHistory = new History(theWords);
   theApp = new App(false);
 });
 
+// OK Save hashes and trigger reload
+// OK Sampled analytics thru Plausible event
+// OK Text: nothing collected
 // Counter on new day: "quiz ready"?
-// README
+// Repeating letters fix
+// Reloader not a class
 
 const T = {
   title: "どうも! Wordleの日本語バージョン",
   tooFewLetters: "文字が足りませんよ",
   unknownWord: "あっ\nその単語は辞書にありませんよ！",
-  congrats: "おめでとうございます！",
   puzzleSuccess: "${day}つ目のパズルを完成しました！",
   puzzleFail: "${day}つ目のパズルに負けてしまいました！",
   shareClipboard: "クリップボードにコピーしました！",
@@ -45,7 +62,8 @@ class App {
 
     this.initPopup();
     this.initShare();
-
+    this.initSettings();
+    
     if (this.gamestate.isFinished()) this.showStatus();
     else if (!theHistory.hasPlayed()) this.showInfo();
   }
@@ -55,31 +73,43 @@ class App {
     document.getElementById("showInfo").addEventListener("click", () => {
       this.showInfo();
     });
-    document.getElementById("showStatus").addEventListener("click", () => {
-      if (!this.gamestate.isFinished()) return;
-      this.showStatus();
+    document.getElementById("showSettings").addEventListener("click", () => {
+      this.showSettings();
     });
     if (this.gamestate.isFinished()) {
       document.getElementById("showStatus").classList.add("visible");
     }
+    document.getElementById("showStatus").addEventListener("click", () => {
+      if (!this.gamestate.isFinished()) return;
+      this.showStatus();
+    });
     elmPopup.addEventListener("click", (e) => {
       if (e.target.tagName != "BUTTON" || !e.target.classList.contains("close")) return;
-      let elmSections = elmPopup.querySelectorAll("section");
-      elmSections.forEach(elm => elm.classList.remove("visible"));
-      elmPopup.classList.remove("visible");
-      if (this.countdownIntervalId) {
-        clearInterval(this.countdownIntervalId);
-        this.countdownIntervalId = null;
-      }
+      this.closePopup();
     });
   }
 
+  closePopup() {
+    let elmPopup = document.getElementsByTagName("article")[0];
+    let elmSections = elmPopup.querySelectorAll("section");
+    elmSections.forEach(elm => elm.classList.remove("visible"));
+    elmPopup.classList.remove("visible");
+    if (this.countdownIntervalId) {
+      clearInterval(this.countdownIntervalId);
+      this.countdownIntervalId = null;
+    }
+  }
+  
   initShare() {
     document.getElementById("shareGeneral").addEventListener("click", () => {
       let msg = T.shareText;
       msg = msg.replace("{day}", this.gamestate.dayIx);
-      msg = msg.replace("{guesses}", this.gamestate.finishedRows);
-      msg += this.gamestate.getShareText();
+      if (this.gamestate.isSolved())
+        msg = msg.replace("{guesses}", this.gamestate.finishedRows);
+      else msg = msg.replace("{guesses}", "X");
+      let darkMode = theSettings.displayMode == DisplayMode.Dark;
+      let constrastColors = theSettings.colorScheme == ColorScheme.BlueOrange;
+      msg += this.gamestate.getShareText(darkMode, constrastColors);
       if (navigator.share) {
         navigator.share({
           title: T.title,
@@ -92,8 +122,61 @@ class App {
     });
   }
 
+
+  initSettings() {
+
+    let elmDLSetting = document.getElementById("darkLightSetting");
+    if (theSettings.getDisplayMode() == DisplayMode.Dark)
+      elmDLSetting.classList.add("darkMode");
+    else
+      elmDLSetting.classList.add("lightMode");
+    elmDLSetting.addEventListener("click", () => {
+      if (elmDLSetting.classList.contains("darkMode")) {
+        elmDLSetting.classList.remove("darkMode");
+        elmDLSetting.classList.add("lightMode");
+        theSettings.setDisplayMode(DisplayMode.Light);
+        setDarkLightClass();
+      }
+      else {
+        elmDLSetting.classList.remove("lightMode");
+        elmDLSetting.classList.add("darkMode");
+        theSettings.setDisplayMode(DisplayMode.Dark);
+        setDarkLightClass();
+      }
+    });
+
+    let elmCSSetting = document.getElementById("colorSchemeSetting");
+    if (theSettings.getColorScheme() == ColorScheme.RedGreen) {
+      elmCSSetting.querySelector("#colorsRedGreen").checked = true;
+    }
+    else {
+      elmCSSetting.querySelector("#colorsBlueOrange").checked = true;
+      document.documentElement.classList.add("contrast");
+    }
+    let radios = elmCSSetting.querySelectorAll("input[type=radio]");
+    radios.forEach(radio => radio.addEventListener('change', (e) => {
+      if (elmCSSetting.querySelector("#colorsRedGreen").checked) {
+        document.documentElement.classList.remove("contrast");
+        theSettings.setColorScheme(ColorScheme.RedGreen);
+      }
+      else {
+        document.documentElement.classList.add("contrast");
+        theSettings.setColorScheme(ColorScheme.BlueOrange);
+      }
+    }));
+
+  }
+
+  showSettings() {
+    this.closePopup();
+    let elmPopup = document.getElementsByTagName("article")[0];
+    elmPopup.querySelector("#settingsPopup").classList.add("visible");
+    elmPopup.classList.add("visible");
+  }
+
   showInfo() {
 
+    this.closePopup();
     let elmPopup = document.getElementsByTagName("article")[0];
 
     // Update version from hash in script URL
@@ -110,6 +193,8 @@ class App {
   }
 
   showStatus() {
+  
+    this.closePopup();
     let elmPopup = document.getElementsByTagName("article")[0];
 
     let elmStatusMsg = document.getElementById("statusMsg");
@@ -122,8 +207,11 @@ class App {
     elmPopup.querySelector("#statusPopup").classList.add("visible");
     elmPopup.classList.add("visible");
 
+
+    let darkMode = theSettings.displayMode == DisplayMode.Dark;
+    let constrastColors = theSettings.colorScheme == ColorScheme.BlueOrange;
     elmPopup.querySelector("#sharePreview").innerHTML =
-      "<span>" + this.gamestate.getShareText() + "</span>";
+      "<span>" + this.gamestate.getShareText(darkMode, constrastColors) + "</span>";
 
     let nextDate = theHistory.nextGameDate();
     updateCounter();
@@ -166,7 +254,7 @@ class App {
     if (!this.gamestate.isFinished()) return;
     // Game just finished now
     if (this.gamestate.isSolved()) {
-      this.warning.show(T.congrats);
+      setTimeout(doConfetti, 200);
     } else {
       this.warning.show(this.gamestate.solution.toUpperCase());
     }
@@ -204,5 +292,23 @@ class App {
 
   initFromHistory() {
     this.gamestate = theHistory.currentGame();
+  }
+}
+
+function doConfetti() {
+  confetti();
+  setTimeout(() => {
+    confetti();
+  }, 800);
+}
+
+
+function setDarkLightClass() {
+  if (theSettings.getDisplayMode() == DisplayMode.Dark) {
+    document.documentElement.classList.remove("light");
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
   }
 }

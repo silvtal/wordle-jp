@@ -15,6 +15,8 @@ grep -v -x -f bad-words.txt wordle-jp-5-raw.txt | grep -v "'" | grep -v " " | so
 cp jp-words-5.txt wordle-jp-5-filtered.txt # in buld-custom-tasks we can see this is "all" words
 cp jp-words-5.txt wordle-jp-5-filter1.txt  # 1 has all suitable words. 2 is the same as 1 but removing the already seen ones, which are marked in filtered with a preceeding dot. in buld-custom-tasks we can see this is "all new" words
 
-# add these because it wont update
-cp jp-words-5.txt jp-words-5-filtered.txt
 # TODO filter2 has the used ones. How does that work?? add SHIKU
+
+## correr node getnew
+## importante: correr "node build-custom-tasks.js --prod" para re-generar words.js
+
