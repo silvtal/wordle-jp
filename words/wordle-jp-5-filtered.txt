@@ -2266,7 +2266,6 @@ konma
 konme
 konou
 konpa
-konpe
 konpo
 konte
 konto
@@ -2510,7 +2509,6 @@ meika
 meiki
 meini
 meiou
-meira
 meiro
 meiru
 meiso
@@ -3289,7 +3287,6 @@ rensa
 rento
 renza
 renzu
-reria
 retsu
 retto
 reyon
@@ -4027,7 +4024,6 @@ tenyu
 tenza
 teoke
 teono
-teria
 terou
 teshi
 tesho
