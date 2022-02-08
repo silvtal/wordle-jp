@@ -332,7 +332,6 @@ beton
 betsu
 beyon
 biame
-biari
 bibou
 bicha
 bichi
@@ -2469,7 +2468,6 @@ mansu
 manto
 mappu
 marei
-maria
 marin
 maron
 marou
@@ -2796,7 +2794,6 @@ ninki
 ninku
 ninmu
 ninpu
-ninri
 ninso
 ninya
 niobe
@@ -3291,7 +3288,6 @@ retsu
 retto
 reyon
 rezun
-riaru
 riben
 ribon
 richi
