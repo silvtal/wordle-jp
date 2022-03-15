@@ -15959,5 +15959,9 @@ rakku
 meiru
 moaka
 kukui
+nihon
+tonbi
 acchi
 geemu
+umami
+futon

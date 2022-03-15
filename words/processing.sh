@@ -17,5 +17,6 @@ cp jp-words-5.txt wordle-jp-5-filtered.txt # in buld-custom-tasks we can see thi
 cp jp-words-5.txt wordle-jp-5-filter1.txt  # 1 has all suitable words. 2 is the same as 1 but removing the already seen ones, which are marked in filtered with a preceeding dot. in buld-custom-tasks we can see this is "all new" words
 cp jp-words-5.txt jp-words-5-filtered.txt
 
-## "node ../build-custom-tasks.js --prod"
-## important: run "node words/wordle-jp-getnew.js" to re-generate words.js
+## for f in $(ls *.js) ;do node $f --prod ; done
+## node ./*
+## node ./*/*
