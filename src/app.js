@@ -125,7 +125,6 @@ class App {
 
 
   initSettings() {
-
     let elmDLSetting = document.getElementById("darkLightSetting");
     if (theSettings.getDisplayMode() == DisplayMode.Dark)
       elmDLSetting.classList.add("darkMode");

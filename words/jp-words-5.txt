@@ -212,7 +212,6 @@ hijou
 mison
 amari
 amari
-kajou
 katsu
 katsu
 motsu
@@ -586,7 +585,6 @@ banto
 mizou
 mizou
 furai
-rinia
 ikioi
 gisei
 raina
@@ -599,7 +597,6 @@ datou
 souou
 datou
 souou
-fukku
 kikku
 panto
 sayou
@@ -952,7 +949,6 @@ guroi
 guroi
 atoni
 jigai
-jijin
 kante
 kante
 bakku
@@ -1518,7 +1514,6 @@ koudo
 banno
 yaban
 sotto
-korei
 narai
 fuugi
 sousa
@@ -1750,7 +1745,6 @@ bunri
 bouon
 hatsu
 ageru
-sanba
 masse
 jouka
 sotto
@@ -1828,7 +1822,6 @@ aimai
 fumei
 konga
 runba
-sanba
 rinbu
 tango
 kenbu
@@ -1886,7 +1879,6 @@ eihou
 haiei
 katto
 feido
-fukku
 patto
 tejun
 junjo
@@ -2026,7 +2018,6 @@ zouka
 igyou
 katei
 kasou
-osuru
 katei
 katei
 apuri
@@ -2034,7 +2025,6 @@ ouyou
 datou
 katei
 kasou
-osuru
 suido
 sotei
 shima
@@ -2050,7 +2040,6 @@ suido
 suiri
 kinou
 kousa
-osuru
 suiri
 dasai
 enzan
@@ -2163,7 +2152,6 @@ zouka
 ireru
 jogai
 kyohi
-hinin
 juyou
 ginau
 kyohi
@@ -2250,16 +2238,10 @@ tosou
 oubou
 katte
 juyou
-oyaku
-oyaku
 outou
-oyaku
 ninmu
-oyaku
 kadai
-oyaku
 ninmu
-oyaku
 yosou
 yochi
 yoken
@@ -2268,8 +2250,6 @@ kinou
 dorai
 tadau
 zouka
-oyaku
-oyaku
 ukabu
 nirui
 shoto
@@ -2609,10 +2589,7 @@ henji
 unhen
 inamu
 hitei
-hinin
-hinin
 hitei
-hinin
 hitei
 zenin
 jinin
@@ -2631,7 +2608,6 @@ hozon
 hokan
 boufu
 koudo
-hinin
 enryo
 boufu
 meiyo
@@ -2736,7 +2712,6 @@ yayuu
 ajiru
 chouu
 yayuu
-hinin
 yayuu
 abaku
 rotei
@@ -2748,7 +2723,6 @@ gimou
 mansu
 kanji
 fanki
-rebyu
 wakai
 onani
 shuin
@@ -2807,7 +2781,6 @@ sakan
 annai
 satei
 youki
-hinin
 futou
 jogen
 teian
@@ -2947,7 +2920,6 @@ eizou
 zouei
 manba
 kuiru
-hinin
 yobau
 goubu
 hoeru
@@ -2977,7 +2949,6 @@ tanki
 kabin
 atsui
 atsui
-osuru
 suido
 zouen
 engei
@@ -3402,7 +3373,6 @@ kidai
 kikou
 okure
 chien
-hinin
 furui
 fuhan
 gaman
@@ -3417,7 +3387,6 @@ kisou
 warai
 nerau
 purei
-kajou
 sogai
 heisa
 tatsu
@@ -3438,7 +3407,6 @@ yobou
 ataru
 ataru
 ataru
-fukku
 houfu
 kouri
 ikiki
@@ -3463,9 +3431,7 @@ shuto
 ippai
 shiea
 jimae
-ojama
 gaisu
-ojama
 soshi
 sogai
 soshi
@@ -3540,7 +3506,6 @@ jouto
 zokka
 gokan
 attou
-osuru
 attou
 kechi
 aruku
@@ -3822,7 +3787,6 @@ benri
 owaru
 owaru
 shiso
-hinin
 shubi
 benso
 bengo
@@ -4149,7 +4113,6 @@ rikou
 rikou
 muchi
 attou
-osuru
 attou
 kotei
 kaisu
@@ -4239,7 +4202,6 @@ ireru
 soumu
 kadai
 ookii
-osuru
 semai
 nuguu
 amiba
@@ -4299,7 +4261,6 @@ kissu
 motsu
 ritan
 nagai
-rachi
 sarau
 yusou
 unpan
@@ -4323,9 +4284,7 @@ nagai
 yurui
 furuu
 furuu
-osuru
 taito
-osuru
 guppi
 oreru
 keiji
@@ -4380,7 +4339,6 @@ kouun
 kouun
 kahou
 mengo
-rachi
 sarau
 ookii
 sasai
@@ -4507,7 +4465,6 @@ mucha
 mucha
 mecha
 kabun
-kajou
 kadai
 katou
 kajuu
@@ -4581,7 +4538,6 @@ fuyou
 muyou
 yokei
 jouta
-kajou
 fuyou
 yokei
 muyou
@@ -4692,7 +4648,6 @@ yuuki
 okosu
 okosu
 seisu
-osuru
 jakki
 yuuin
 yuuki
@@ -4716,7 +4671,6 @@ zouei
 kumen
 dakai
 hakai
-osuru
 idasu
 idasu
 youki
@@ -4879,7 +4833,6 @@ itasu
 okosu
 okosu
 souan
-osuru
 junbi
 tsune
 fuhen
@@ -5166,7 +5119,6 @@ sukin
 jouhi
 tango
 konga
-sanba
 manbo
 youki
 runba
@@ -5343,12 +5295,10 @@ burei
 jokou
 tairu
 zouka
-osuru
 annai
 annai
 amari
 kabun
-kajou
 kadai
 katou
 bikou
@@ -5940,7 +5890,6 @@ henpu
 henfu
 yokin
 nanfu
-ninfu
 sashi
 sukuu
 kanwa
@@ -6196,7 +6145,6 @@ karui
 menjo
 itaru
 bongo
-osuru
 teian
 mecha
 mouri
@@ -6235,7 +6183,6 @@ okapi
 shiki
 shiji
 gaido
-osuru
 okojo
 seisu
 okojo
@@ -6493,9 +6440,7 @@ kouen
 shiji
 shiji
 zenin
-ojama
 fuusa
-ojama
 tatsu
 soshi
 sogai
@@ -6596,7 +6541,6 @@ ajiru
 kosui
 seisu
 seiha
-osuru
 shori
 daiji
 isaki
@@ -6698,10 +6642,8 @@ yuuyo
 chien
 yuuyo
 tsuru
-osuru
 akaai
 seisu
-osuru
 tsuku
 shoji
 motsu
@@ -6783,7 +6725,6 @@ houru
 tatsu
 shisu
 tatsu
-adobi
 teono
 hozon
 hozon
@@ -6793,7 +6734,6 @@ itaru
 oyobu
 itaru
 oyobu
-eakon
 tousu
 itaru
 itaru
@@ -6818,7 +6758,6 @@ datou
 kanau
 itchi
 wagou
-kajou
 kenru
 kanau
 kanau
@@ -6860,7 +6799,6 @@ tsugu
 tsugu
 ukeru
 teiji
-osuru
 zense
 furue
 apato
@@ -7019,11 +6957,8 @@ honya
 butsu
 bogen
 kishu
-bouru
 hachi
-bouru
 hachi
-bouru
 boura
 botai
 ringu
@@ -7154,9 +7089,6 @@ uwagi
 tosou
 rakku
 shisu
-koiru
-koiru
-koiru
 keiwa
 nurie
 kokki
@@ -7325,7 +7257,6 @@ nouka
 kokku
 fensu
 kakoi
-rachi
 kanto
 shoui
 uingu
@@ -7404,7 +7335,6 @@ souko
 houko
 houko
 gongu
-kanfu
 kanga
 gamon
 ishou
@@ -7443,16 +7373,13 @@ honbu
 honbu
 kanto
 metto
-ojama
 sashi
 soshi
 omoni
 hinji
 hinji
 kauru
-fukku
 hokku
-fukku
 hokku
 tekou
 tsume
@@ -7505,7 +7432,6 @@ kizai
 kikai
 keiki
 dougu
-netto
 shisa
 tsuji
 airon
@@ -7519,17 +7445,12 @@ jakku
 jakku
 jakku
 janba
-janpa
 yakke
 ninya
 rouya
 jinzu
 jueri
 fushi
-janpa
-janpa
-janpa
-janpa
 katto
 yakan
 yakan
@@ -7545,7 +7466,6 @@ saien
 kaito
 naifu
 naifu
-naito
 nitto
 nitto
 amiki
@@ -7663,10 +7583,6 @@ koppu
 maggu
 myuru
 gakki
-netto
-netto
-netto
-netto
 nekan
 kishu
 natto
@@ -7821,7 +7737,6 @@ sumai
 juuka
 onsen
 ribon
-raisa
 touki
 gisou
 raito
@@ -8320,7 +8235,6 @@ itchi
 aibun
 aimon
 itchi
-ironi
 souou
 benri
 bengi
@@ -8849,14 +8763,10 @@ tasuu
 amata
 houfu
 houfu
-kajou
 katou
-kajou
 yobun
 yojou
 jouyo
-kajou
-kajou
 yoyuu
 kinsa
 suuji
@@ -9272,7 +9182,6 @@ osamu
 dasei
 fuugi
 minne
-korei
 narai
 seido
 netsu
@@ -9314,7 +9223,6 @@ kouji
 daiin
 kaeri
 tsugu
-nekei
 keite
 atome
 kaigi
@@ -9377,7 +9285,6 @@ bunpu
 kubun
 asesu
 satei
-rebyu
 hihan
 tenka
 satei
@@ -9454,7 +9361,6 @@ haaku
 rikai
 haaku
 sensu
-korei
 sekai
 kirai
 kioku
@@ -9465,9 +9371,7 @@ bunya
 kasho
 kojou
 joume
-kajou
 kasho
-kajou
 saibu
 riyuu
 douri
@@ -9766,7 +9670,6 @@ reiya
 kijun
 jigen
 teido
-tekai
 keiki
 bunyo
 denpa
@@ -9884,7 +9787,6 @@ koden
 kitan
 konto
 guuwa
-rebyu
 bokka
 poemu
 eiuta
@@ -9910,13 +9812,10 @@ kikou
 kisou
 fushi
 jouki
-kajou
-kajou
 kejou
 jikou
 kojou
 joume
-kajou
 souwa
 deban
 josou
@@ -9954,7 +9853,6 @@ essei
 essei
 peipa
 kadai
-rebyu
 gohon
 bukku
 tosho
@@ -9967,7 +9865,6 @@ jogen
 joshi
 joron
 jodai
-tekai
 jiten
 jiten
 kanwa
@@ -9975,7 +9872,6 @@ goten
 jiten
 jisho
 jiten
-tekai
 gaido
 annai
 nanba
@@ -9997,8 +9893,6 @@ omote
 jikou
 kojou
 joume
-kajou
-kajou
 gidai
 gidai
 dajun
@@ -10050,7 +9944,6 @@ inbou
 satei
 houdo
 houki
-kajou
 mukou
 houan
 houdo
@@ -10072,7 +9965,6 @@ botto
 rinku
 kikan
 nanba
-rebyu
 wadai
 yodan
 yougi
@@ -10153,10 +10045,6 @@ sayuu
 kanri
 gendo
 kagen
-kuota
-kuota
-kuota
-kuota
 kappu
 kinyu
 jougi
@@ -10314,7 +10202,6 @@ kyogi
 kamen
 gizen
 peten
-rebyu
 gikai
 inrei
 inyou
@@ -10345,7 +10232,6 @@ yumoa
 kichi
 kichi
 share
-ironi
 iyami
 iyami
 iyami
@@ -10518,7 +10404,6 @@ bamen
 konte
 taiwa
 tanka
-rebyu
 dansu
 buyou
 butou
@@ -10562,7 +10447,6 @@ orudi
 konga
 jiggu
 runba
-sanba
 tango
 machi
 poppu
@@ -10573,7 +10457,6 @@ jaibu
 regee
 gikou
 keigo
-jagon
 iimae
 iiyou
 iimae
@@ -10583,7 +10466,6 @@ wahou
 iiyou
 genji
 gohou
-jagon
 gosei
 gougo
 taben
@@ -10676,7 +10558,6 @@ keiku
 keiku
 keigo
 seiku
-jagon
 inshi
 higen
 noroi
@@ -11487,8 +11368,6 @@ patei
 taffi
 toffi
 choko
-minto
-minto
 amami
 furan
 reika
@@ -11527,7 +11406,6 @@ mafin
 sukon
 sando
 jairo
-ruben
 rappu
 oruzo
 jitei
@@ -11551,7 +11429,6 @@ ringo
 ringo
 ringo
 ringo
-pipin
 ekika
 enoki
 mikan
@@ -11608,7 +11485,6 @@ jinja
 meisu
 peppa
 rorie
-minto
 seiji
 piman
 anisu
@@ -11655,7 +11531,6 @@ chaha
 omizu
 retsu
 kubun
-kuron
 yangu
 mouja
 kojin
@@ -11701,7 +11576,6 @@ pakku
 kikou
 umase
 kougi
-kanfu
 okami
 seifu
 kubou
@@ -11723,7 +11597,6 @@ kajin
 katei
 kamon
 nigun
-chimu
 shubi
 keizu
 keifu
@@ -11773,7 +11646,6 @@ neivi
 neibi
 neivi
 butai
-chimu
 teimu
 satsu
 satsu
@@ -11867,7 +11739,6 @@ jajji
 houin
 kasai
 samon
-kanfu
 kanga
 kyoku
 kikan
@@ -11925,7 +11796,6 @@ kikou
 kikan
 hanmi
 ouhou
-kajou
 okime
 chime
 junjo
@@ -12036,8 +11906,6 @@ matsu
 bamen
 matsu
 kyoku
-feaue
-feaue
 genba
 tochi
 hisen
@@ -12081,7 +11949,6 @@ denpo
 tachi
 tamen
 ineda
-feaue
 kouen
 kouen
 teien
@@ -12261,8 +12128,6 @@ rando
 tarin
 kiefu
 ajaru
-sudan
-sudan
 suisu
 berun
 genfu
@@ -12534,11 +12399,9 @@ yuuki
 obake
 shuui
 nanfu
-ninfu
 erisu
 atena
 kaosu
-naito
 myuzu
 erato
 zeusu
@@ -12614,7 +12477,6 @@ joyuu
 natto
 senmu
 bibou
-kanfu
 komon
 douin
 dairi
@@ -12680,7 +12542,6 @@ batta
 dasha
 okomo
 senhi
-hinin
 monto
 aisho
 aotou
@@ -12950,8 +12811,6 @@ saoko
 iinin
 chiji
 insei
-osofu
-osofu
 sofuo
 osobo
 osobo
@@ -12995,7 +12854,6 @@ hanta
 danna
 danna
 tonma
-taigu
 gunin
 gusha
 batsu
@@ -13033,8 +12891,6 @@ kisha
 bunya
 hanji
 houmu
-janpa
-janpa
 nisei
 houka
 kikka
@@ -13042,7 +12898,6 @@ kingu
 kingu
 enpen
 fukei
-naito
 kishi
 ninpu
 kufuu
@@ -13097,8 +12952,6 @@ menba
 seiin
 taiin
 gerou
-sanba
-maira
 ofisa
 kouin
 maima
@@ -13139,7 +12992,6 @@ ninbi
 ninja
 sakka
 nisou
-ninfu
 ofisa
 kanri
 oyaji
@@ -13193,7 +13045,6 @@ kagen
 henka
 gonge
 genmi
-farao
 daida
 senku
 shiso
@@ -13206,7 +13057,6 @@ koute
 toori
 yadon
 kajin
-shiie
 kajin
 fukei
 junsa
@@ -13372,7 +13222,6 @@ reika
 hikae
 hikae
 nochi
-nekei
 keite
 atome
 sumou
@@ -13385,7 +13234,6 @@ suima
 suima
 heiie
 kisai
-shiie
 gikou
 gishi
 teddo
@@ -13497,7 +13345,6 @@ kohan
 konto
 kokku
 kokku
-kuron
 karia
 ganma
 dante
@@ -13513,7 +13360,6 @@ edari
 edoui
 eruga
 ebasu
-faria
 fonda
 fonda
 furie
@@ -13551,7 +13397,6 @@ haize
 hoffa
 hogan
 hoggu
-fukku
 fukka
 fukka
 oruta
@@ -13662,7 +13507,6 @@ raihi
 raihi
 reido
 raita
-ruben
 raisu
 raisu
 riman
@@ -13889,7 +13733,6 @@ aoasa
 panya
 panya
 kakao
-sanba
 yasai
 erika
 asebi
@@ -14019,7 +13862,6 @@ konme
 jukan
 fushi
 fushi
-rinia
 midai
 tochi
 jisho
@@ -14095,8 +13937,6 @@ teate
 teate
 shiea
 riken
-kuota
-kuota
 badai
 basen
 teate
@@ -14188,10 +14028,6 @@ tsuri
 tsuri
 kouka
 daimu
-kuota
-kuota
-kuota
-kuota
 washi
 nijuu
 akaji
@@ -14249,7 +14085,6 @@ teika
 fuhai
 taika
 juyou
-hinin
 hasei
 fuhai
 keika
@@ -14323,8 +14158,6 @@ kiban
 netei
 dosuu
 hindo
-kuota
-kuota
 omori
 suiko
 niban
@@ -14339,7 +14172,6 @@ pekku
 kuoto
 garon
 pekku
-kuota
 ritta
 bitto
 baito
@@ -14358,7 +14190,6 @@ pachi
 roddo
 haron
 mairu
-maira
 rinyu
 chein
 myaku
@@ -14406,7 +14237,6 @@ guren
 pondo
 eikin
 suton
-eiton
 guren
 guren
 erugu
@@ -14592,7 +14422,6 @@ hoshi
 kukei
 bunki
 keido
-bouru
 hachi
 mizuo
 tokki
@@ -14753,8 +14582,6 @@ haran
 haran
 karan
 ooare
-dotou
-dotou
 haran
 haran
 jiken
@@ -14847,7 +14674,6 @@ fukai
 hossa
 hossa
 kouka
-oyaku
 ebora
 porio
 runge
@@ -15298,7 +15124,6 @@ hisui
 hisui
 hisui
 kirou
-jagon
 jieri
 panya
 keton
@@ -15447,14 +15272,11 @@ ohiru
 ohiru
 yuube
 shoku
-naito
 yabun
 yahan
 yakan
-naito
 yabun
 yakan
-naito
 yabun
 yakan
 yuube
@@ -15489,16 +15311,11 @@ kigen
 kikan
 keiki
 gakki
-kuota
-kuota
-kuota
-kuota
 yougo
 jikan
 jikan
 jikan
 banka
-kuota
 sezon
 otamu
 akiba
@@ -15548,7 +15365,6 @@ jidai
 omote
 setto
 yuugi
-kuota
 unten
 konya
 koyoi
@@ -15609,7 +15425,14 @@ rakku
 meiru
 moaka
 kukui
+maigo
+kunai
+doumo
+gachi
+jukou
+minna
 nihon
+ritou
 tonbi
 acchi
 geemu

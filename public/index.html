@@ -7,7 +7,7 @@
   <title>どうも！ • Wordleの日本語バージョンへようこそ</title>
   <meta name="description" content="お題の単語を6回のトライで当ててみてください。試行錯誤のゲームです。">
 
-  <meta property="og:url" content="https://wordle-jp.netlify.app/">
+  <meta property="og:url" content="https://wordlejp.netlify.app/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="どうも！ • Wordleの日本語バージョンへようこそ">
   <meta property="og:description" content="お題の単語を6回のトライで当ててみてください。試行錯誤のゲームです。">
@@ -17,8 +17,8 @@
   <link rel="canonical" href="https://wordle-jp.netlify.app/">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-  <link rel="stylesheet" href="./app.css" id="app-css">
-  <script defer src="./app.js" id="app-js"></script>
+  <link rel="stylesheet" href="./app.css?v=a6b83092b11b65de67ecab33555c9c22" id="app-css">
+  <script defer src="./app.js?v=d3953fb7a57840f33e7919c006de016a" id="app-js"></script>
   <script defer src="https://plausible.io/js/plausible.js" data-domain="wordle-jp.netlify.app"></script>
   <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   <!--TODO s LiveReload-->
@@ -107,7 +107,8 @@
       <p>
         連絡先
         <span class="right"><a href="https://github.com/silvtal/wordle-jp">Github</a> |
-        <a href="mailto:stalaveramarcos@gmail.com">Email</a> </span>
+        <a href="mailto:stalaveramarcos@gmail.com">Email</a> <!--|
+        <a href="https://ko-fi.com/silvtal">Ko-Fi</a></span> -->
         <br>
         <span class="right" id="info">abab</span>
       </p>
@@ -157,7 +158,8 @@
             c5.759,0,10.428-4.668,10.428-10.428C56.402,41.697,51.734,37.031,45.975,37.031z"/>
         </svg>
       </div>
-      <p>次のパズルまであと<br><span id="timeLeft">00&#8203;:00&#8203;:00</span></p>
+      <p> <!-- TODO remove on 25 -->
+      </p>次のパズルまであと<br><span id="timeLeft">00&#8203;:00&#8203;:00</span></p>
       <button class="close">X</button>
     </section>
   </article>

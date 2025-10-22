@@ -5,20 +5,19 @@
   "license": "MIT",
   "author": {
     "name": "Silvia Talavera Marcos",
-    "email": "stalaveramarcos@gmail.com"
+    "email": "stalaveramarcos@protonmail.com"
   },
   "devDependencies": {
-    "esbuild": "0.13.12",
+    "esbuild": "^0.25.11",
     "esbuild-plugin-less": "^1.1.6",
     "livereload": "0.9.3",
     "md5": "^2.3.0",
-    "node-linux-x64": "^17.3.0",
+    "node-linux-x64": "^17.9.1",
     "static-server": "2.2.1"
   },
   "dependencies": {
     "canvas-confetti": "^1.4.0",
     "date-fns": "^2.28.0",
-    "less-loader": "^10.2.0",
-    "node": "^17.3.0"
+    "less-loader": "^10.2.0"
   }
 }

@@ -2,7 +2,7 @@ import {differenceInDays, addDays} from "date-fns";
 import {Gamestate} from "./gamestate.js";
 import {Words} from "./words.js";
 
-const firstDay = new Date(2022, 0, 13, 4, 0, 0);
+const firstDay = new Date(2022, 0, 12, 4, 0, 0);
 
 function dayIndex() {
   return Math.floor(differenceInDays(new Date(), firstDay));
@@ -56,7 +56,7 @@ class History {
 
   nextGameDate() {
     let now = new Date();
-    if (now.getHours() < 4) {
+    if (now.getHours() < 21) {
       return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 4, 0, 0, 0);
     }
     else {
