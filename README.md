@@ -2,7 +2,7 @@
 
 This is an adaptation of Josh Wardle's original game, Wordle, into Japanese. Forked and modified from gugray's version in Hungarian.
 
-You can play [here](https://wordle-jp.netlify.app/)
+You can play [here](https://wordlejp.netlify.app/)
 
 ------------
 
